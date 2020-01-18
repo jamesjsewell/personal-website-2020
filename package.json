@@ -1,0 +1,24 @@
+{
+  "name": "jamesjsewell",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run watch-scss",
+    "watch-scss": "node-sass --watch ./style.scss ./style.css"
+  },
+  "keywords": [
+    "james",
+    "j",
+    "sewell",
+    "website"
+  ],
+  "author": "jamesjsewell",
+  "license": "ISC",
+  "devDependencies": {
+    "install": "^0.13.0",
+    "node-sass": "^4.13.0",
+    "npm": "^6.13.6"
+  }
+}
