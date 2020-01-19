@@ -13,39 +13,101 @@
     />
   </head>
   <body>
-    <div class="wrapper">
-      <div class="logo-and-skills-wrapper">
-        <div class="logo-wrapper">
-          <div class="icon-wrapper">
-            <img id="logo" src="public/social-icons/jamesjsewell.png" />
-          </div>
-          <div class="name-and-title-wrapper">
-            <div class="name-wrapper">James Sewell</div>
-            <div class="title-wrapper">Software Engineer</div>
-          </div>
-        </div>
-        <div class="skills-wrapper">
-          <img src="./public/skill-icons/javascript.png" />
-          <img src="./public/skill-icons/typescript.png" />
-          <img src="./public/skill-icons/react.png" />
-          <img src="./public/skill-icons/redux.png" />
-          <img src="./public/skill-icons/angular.png" />
-          <img src="./public/skill-icons/rxjs.png" />
-          <img src="./public/skill-icons/backbone.png" />
-          <img src="./public/skill-icons/jquery.png" />
-          <img src="./public/skill-icons/html.png" />
-          <img src="./public/skill-icons/css.png" />
-          <img src="./public/skill-icons/photoshop.png" />
-          <img src="./public/skill-icons/illustrator.png" />
-          <img src="./public/skill-icons/nodejs.png" />
-          <img src="./public/skill-icons/mongodb.png" />
-          <img src="./public/skill-icons/terminal.png" />
-          <img src="./public/skill-icons/git.png" />
-          <img src="./public/skill-icons/github.png" />
-          <img src="./public/skill-icons/cypress.png" />
-          <img src="./public/skill-icons/jira.png" />
-        </div>
+    <div class="nav-wrapper">
+      <div class="links-wrapper">
+        <a class="scroll" href="#home">HOME</a>
+        <a class="scroll" href="#projects">PROJECTS</a>
+        <a class="scroll" href="#contact">CONTACT</a>
       </div>
     </div>
+    <div class="page-wrapper">
+      <div id="home" class="home-wrapper">
+        <div class="content-wrapper">
+          <div class="social-links-and-logo-wrapper">
+            <div class="social-links-wrapper">
+              <a class="social-icon" href="">
+                <img src="./public/social-icons/github.png" />
+              </a>
+              <a class="social-icon" href="">
+                <img src="./public/social-icons/linkedin.png" />
+              </a>
+              <a class="social-icon" href="">
+                <img src="./public/social-icons/resume.png" />
+              </a>
+            </div>
+
+            <div class="logo-wrapper">
+              <div class="icon-wrapper">
+                <img id="logo" src="public/social-icons/jamesjsewell.png" />
+              </div>
+              <div class="name-and-title-wrapper">
+                <div class="name-wrapper">James Sewell</div>
+                <div class="title-wrapper">Software Engineer</div>
+              </div>
+            </div>
+          </div>
+          <div class="skills-wrapper">
+            <img src="./public/skill-icons/javascript.png" />
+            <img src="./public/skill-icons/typescript.png" />
+            <img src="./public/skill-icons/react.png" />
+            <img src="./public/skill-icons/redux.png" />
+            <img src="./public/skill-icons/angular.png" />
+            <img src="./public/skill-icons/rxjs.png" />
+            <img src="./public/skill-icons/backbone.png" />
+            <img src="./public/skill-icons/jquery.png" />
+            <img src="./public/skill-icons/html.png" />
+            <img src="./public/skill-icons/css.png" />
+            <img src="./public/skill-icons/photoshop.png" />
+            <img src="./public/skill-icons/illustrator.png" />
+            <img src="./public/skill-icons/nodejs.png" />
+            <img src="./public/skill-icons/mongodb.png" />
+            <img src="./public/skill-icons/terminal.png" />
+            <img src="./public/skill-icons/git.png" />
+            <img src="./public/skill-icons/github.png" />
+            <img src="./public/skill-icons/cypress.png" />
+            <img src="./public/skill-icons/jira.png" />
+          </div>
+        </div>
+      </div>
+      <div id="projects" class="projects-section-wrapper"></div>
+      <div id="contact" class="contact-section-wrapper"></div>
+    </div>
+    <div id="test"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var scrollLink = $('.scroll');
+
+        // Smooth scrolling
+        scrollLink.click(function(e) {
+          e.preventDefault();
+          $('body,html').animate(
+            {
+              scrollTop: $(this.hash).offset().top
+            },
+            500
+          );
+        });
+
+        // Active link switching
+        $(window).scroll(function() {
+          var scrollbarLocation = $(this).scrollTop();
+
+          scrollLink.each(function() {
+            var sectionOffset = $(this.hash).offset().top - 20;
+
+            if (sectionOffset <= scrollbarLocation) {
+              $(this)
+                .parent()
+                .addClass('active');
+              $(this)
+                .parent()
+                .siblings()
+                .removeClass('active');
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
