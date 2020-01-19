@@ -13,9 +13,12 @@
     />
   </head>
   <body>
-    <button class="hamburger">
-      <img src="public/ui/hamburger-icon.png" />
-    </button>
+    <div class="mobile-nav-wrapper">
+      <button class="hamburger">
+        <img src="public/ui/hamburger-icon.png" />
+      </button>
+    </div>
+
     <div class="hamburger-menu-wrapper">
       <ul>
         <li>
@@ -123,6 +126,17 @@
                 .removeClass('active');
             }
           });
+        });
+      });
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $('.hamburger').click(function() {
+          $('.hamburger-menu-wrapper').css('visibility', 'visible');
+        });
+        $('.close-icon').click(function() {
+          $('.hamburger-menu-wrapper').css('visibility', 'hidden');
         });
       });
     </script>

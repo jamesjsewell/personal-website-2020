@@ -86,7 +86,8 @@ video {
   font: inherit;
   box-sizing: border-box; }
 
-a {
+a,
+button {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 button,
@@ -103,12 +104,26 @@ textarea {
   outline: inherit; }
 
 body {
-  width: 100%;
+  width: 100vw;
   overflow-x: hidden; }
 
+@media only screen and (max-width: 600px) {
+  .mobile-nav-wrapper {
+    visibility: visible !important; }
+  .nav-wrapper {
+    visibility: hidden !important; } }
+
+.mobile-nav-wrapper {
+  visibility: hidden;
+  width: 100vw;
+  padding: 10px;
+  position: fixed; }
+  .mobile-nav-wrapper img {
+    width: 28px;
+    height: 28px; }
+
 .hamburger-menu-wrapper {
-  width: 100px;
-  height: 120px;
+  padding: 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -147,29 +162,27 @@ body {
       border-left: 1px solid black;
       text-align: center;
       font-family: 'Cutive Mono', monospace;
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       text-decoration: none; }
     .nav-wrapper .links-wrapper a:first-child {
       border: none; }
 
 .page-wrapper {
-  width: 100vw;
-  padding: 0;
-  margin: 0; }
+  width: 100vw; }
   .page-wrapper .home-wrapper {
+    margin: 0;
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-image: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%); }
     .page-wrapper .home-wrapper .content-wrapper {
       max-width: 400px;
       padding: 5px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%); }
+      justify-content: center; }
       .page-wrapper .home-wrapper .content-wrapper .social-links-and-logo-wrapper {
         margin-bottom: 0.7rem;
         display: flex;
@@ -182,7 +195,7 @@ body {
             height: 40px;
             margin: 2px;
             border-radius: 100%;
-            border: 0.1rem solid black;
+            border: 1px solid black;
             display: block;
             position: relative; }
             .page-wrapper .home-wrapper .content-wrapper .social-links-and-logo-wrapper .social-links-wrapper .social-icon img {
