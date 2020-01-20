@@ -111,23 +111,48 @@ body {
   .mobile-nav-wrapper {
     visibility: visible !important; }
   .nav-wrapper {
-    visibility: hidden !important; } }
+    visibility: hidden !important; }
+  .logo-wrapper .icon-wrapper img {
+    width: 50px !important;
+    height: 50px !important; }
+  .social-icon {
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    border-radius: 100%;
+    border: 1px solid black;
+    display: block;
+    position: relative; }
+    .social-icon img {
+      width: 18px !important;
+      height: 18px !important;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); } }
+
+.active {
+  background: black !important; }
+  .active a {
+    color: #81fbb8 !important; }
 
 .mobile-nav-wrapper {
   visibility: hidden;
   width: 100vw;
   padding: 10px;
-  position: fixed; }
+  position: fixed;
+  z-index: 2; }
   .mobile-nav-wrapper img {
     width: 28px;
     height: 28px; }
 
 .hamburger-menu-wrapper {
+  visibility: hidden;
   padding: 10px;
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 2;
+  z-index: 3;
   background: #81fbb8;
   border: 1px solid black;
   visibility: hidden; }
@@ -140,7 +165,7 @@ body {
       height: 20px; }
   .hamburger-menu-wrapper li a {
     color: black;
-    font-family: 'Cutive Mono', monospace;
+    font-family: 'Roboto Condensed', sans-serif;
     font-size: 1.2rem;
     text-decoration: none; }
   .hamburger-menu-wrapper hr {
@@ -151,21 +176,24 @@ body {
   position: fixed;
   width: 100vw;
   display: flex;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  z-index: 2; }
   .nav-wrapper .links-wrapper {
     margin-left: 20px;
+    display: inline-flex;
+    align-items: center;
     background: #81fbb8; }
     .nav-wrapper .links-wrapper a {
-      margin-left: 10px;
       padding: 0px 10px 0px 10px;
       color: black;
-      border-left: 1px solid black;
       text-align: center;
-      font-family: 'Cutive Mono', monospace;
+      font-family: 'Roboto Condensed', sans-serif;
       font-size: 0.8rem;
       text-decoration: none; }
-    .nav-wrapper .links-wrapper a:first-child {
-      border: none; }
+    .nav-wrapper .links-wrapper .link-divider {
+      margin: 0px 5px 0px 5px;
+      width: 0px;
+      height: 0px; }
 
 .page-wrapper {
   width: 100vw; }
@@ -225,7 +253,7 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
-            font-family: 'Cutive Mono', monospace; }
+            font-family: 'Roboto Condensed', sans-serif; }
             .page-wrapper .home-wrapper .content-wrapper .social-links-and-logo-wrapper .logo-wrapper .name-and-title-wrapper .name-wrapper {
               font-size: 1.5rem; }
             .page-wrapper .home-wrapper .content-wrapper .social-links-and-logo-wrapper .logo-wrapper .name-and-title-wrapper .title-wrapper {
