@@ -120,7 +120,8 @@ body {
   z-index: 2; }
   .mobile-nav-wrapper img {
     width: 28px;
-    height: 28px; }
+    height: 28px;
+    background: #81fbb8; }
 
 .hamburger-menu-wrapper {
   visibility: hidden;
@@ -251,9 +252,61 @@ body {
 .contact-section-wrapper {
   width: 100%;
   height: 100vh;
-  background-color: #e4e4e1;
-  background-image: radial-gradient(at top center, rgba(255, 255, 255, 0.03) 0%, rgba(0, 0, 0, 0.03) 100%), linear-gradient(to top, rgba(255, 255, 255, 0.1) 0%, rgba(143, 152, 157, 0.6) 100%);
-  background-blend-mode: normal, multiply; }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black; }
+  .contact-section-wrapper .contact-form-wrapper {
+    max-width: 300px;
+    width: 100%;
+    min-height: 200px;
+    background: #81fbb8; }
+    .contact-section-wrapper .contact-form-wrapper form {
+      display: flex;
+      flex-direction: column;
+      align-items: left;
+      font-family: 'Roboto Condensed', sans-serif;
+      width: 100%; }
+      .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper {
+        width: 100%; }
+        .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper .email-field {
+          margin: auto;
+          width: 90%;
+          margin-top: 15px;
+          margin-bottom: 30px;
+          display: flex;
+          flex-direction: column; }
+          .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper .email-field label {
+            margin-bottom: 5px; }
+          .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper .email-field .email-input {
+            padding: 5px;
+            border-bottom: 1px solid black; }
+      .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper {
+        width: 100%; }
+        .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper .message-field {
+          margin: auto;
+          width: 90%;
+          min-height: 100px;
+          display: flex;
+          flex-direction: column; }
+          .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper .message-field label {
+            margin-bottom: 10px; }
+          .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper .message-field .message-input {
+            height: 100px;
+            max-height: 200px;
+            padding: 5px;
+            resize: vertical;
+            border-bottom: 1px solid black; }
+      .contact-section-wrapper .contact-form-wrapper form .submit-button-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end; }
+        .contact-section-wrapper .contact-form-wrapper form .submit-button-wrapper .submit-button {
+          width: 80px;
+          margin: 10px;
+          padding: 5px;
+          color: #81fbb8;
+          background: black; }
 
 @media (min-width: 600px) {
   .mobile-nav-wrapper,

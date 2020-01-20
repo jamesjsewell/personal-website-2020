@@ -92,7 +92,42 @@
         </div>
       </div>
       <div id="projects" class="projects-section-wrapper"></div>
-      <div id="contact" class="contact-section-wrapper"></div>
+      <div id="contact" class="contact-section-wrapper">
+        <div class="contact-form-wrapper">
+          <form action="https://formspree.io/xqkpgknn" method="POST">
+            <div class="email-field-wrapper">
+              <div class="email-field">
+                <label>
+                  Your Email
+                </label>
+
+                <input
+                  class="email-input"
+                  type="text"
+                  name="_replyto"
+                  placeholder="email address"
+                />
+              </div>
+            </div>
+            <div class="message-field-wrapper">
+              <div class="message-field">
+                <label>
+                  Message
+                </label>
+                <textarea
+                  class="message-input"
+                  name="message"
+                  placeholder="hows it going?"
+                ></textarea>
+              </div>
+            </div>
+            <!-- your other form fields go here -->
+            <div class="submit-button-wrapper">
+              <button class="submit-button" type="submit">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
     <div id="test"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -126,6 +161,7 @@
                 .parent()
                 .siblings()
                 .removeClass('active');
+              $('.hamburger-menu-wrapper').css('visibility', 'hidden');
             }
           });
         });
