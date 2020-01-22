@@ -111,10 +111,8 @@ body {
 }
 
 .active {
-  a {
-    color: #81fbb8 !important;
-  }
-  background: black !important;
+  font-style: italic;
+  border-bottom: 1px solid black !important;
 }
 
 .mobile-nav-wrapper {
@@ -172,12 +170,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   z-index: 2;
+  background-color: #81fbb8;
 
   .links-wrapper {
     margin-left: 20px;
     display: inline-flex;
     align-items: center;
-    background: #81fbb8;
+
     a {
       padding: 0px 10px 0px 10px;
       color: black;
@@ -293,12 +292,6 @@ body {
   }
 }
 
-.projects-section-wrapper {
-  width: 100%;
-  height: 100vh;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-}
-
 .contact-section-wrapper {
   width: 100%;
   height: 100vh;
@@ -318,7 +311,10 @@ body {
       align-items: left;
       font-family: 'Roboto Condensed', sans-serif;
       width: 100%;
-
+      ::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+        opacity: 1;
+      }
       .email-field-wrapper {
         width: 100%;
         .email-field {
@@ -369,6 +365,84 @@ body {
           padding: 5px;
           color: #81fbb8;
           background: black;
+        }
+      }
+    }
+  }
+}
+
+.projects-section-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background-image: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%);
+
+  .projects-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    .project-wrapper {
+      margin: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .project-title {
+        font-family: 'Roboto Condensed', sans-serif;
+        color: black;
+      }
+      .project-description-wrapper {
+        width: 100%;
+        font-family: 'Roboto Condensed', sans-serif;
+
+        a {
+          color: black;
+        }
+      }
+      .project-image-wrapper {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .projects-section-wrapper {
+    .projects-content {
+      width: 90%;
+      flex-direction: row;
+      .project-wrapper {
+        max-width: 400px;
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1rem;
+
+        .project-title {
+        }
+        .project-description-wrapper {
+        }
+        .project-image-wrapper {
+          padding: 10px;
+          img {
+            width: 100%;
+            height: auto;
+          }
         }
       }
     }

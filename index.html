@@ -28,18 +28,18 @@
         </li>
         <li><a class="scroll" href="#home">HOME</a></li>
         <hr />
-        <li><a class="scroll" href="#projects">PROJECTS</a></li>
-        <hr />
         <li><a class="scroll" href="#contact">CONTACT</a></li>
+        <hr />
+        <li><a class="scroll" href="#projects">PROJECTS</a></li>
       </ul>
     </div>
     <div class="nav-wrapper">
       <div class="links-wrapper">
         <div><a class="scroll" href="#home">HOME</a></div>
         <div class="link-divider"></div>
-        <div><a class="scroll" href="#projects">PROJECTS</a></div>
-        <div class="link-divider"></div>
         <div><a class="scroll" href="#contact">CONTACT</a></div>
+        <div class="link-divider"></div>
+        <div><a class="scroll" href="#projects">PROJECTS</a></div>
       </div>
     </div>
     <div class="page-wrapper">
@@ -91,7 +91,6 @@
           </div>
         </div>
       </div>
-      <div id="projects" class="projects-section-wrapper"></div>
       <div id="contact" class="contact-section-wrapper">
         <div class="contact-form-wrapper">
           <form action="https://formspree.io/xqkpgknn" method="POST">
@@ -121,15 +120,76 @@
                 ></textarea>
               </div>
             </div>
-            <!-- your other form fields go here -->
             <div class="submit-button-wrapper">
               <button class="submit-button" type="submit">Send</button>
             </div>
           </form>
         </div>
       </div>
+      <div id="projects" class="projects-section-wrapper">
+        <div class="projects-content">
+          <div class="project-wrapper">
+            <a href="http://guitarro.surge.sh/"
+              ><p class="project-title">Guitar Fretboard Webapp</p></a
+            >
+            <a href="http://guitarro.surge.sh/" class="project-image-wrapper">
+              <img src="public/project-screenshots/guitar-app.png" />
+            </a>
+            <div class="project-description-wrapper">
+              <p>
+                Webapp that visualizes a guitar fretboard with notes and allows
+                the user to select the key and scale. I built this to help teach
+                myself guitar theory. It’s written in pure javascript and the
+                rendering is done using css only. View the source code
+                <a href="https://github.com/jamesjsewell/guitarro">here</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="project-wrapper">
+            <a href="http://alumni.surge.sh/"
+              ><p class="project-title">Graduate Profiles Prototype</p></a
+            >
+            <a href="http://alumni.surge.sh/" class="project-image-wrapper">
+              <img src="public/project-screenshots/dc-alumni-app.png" />
+            </a>
+            <div class="project-description-wrapper">
+              <p>
+                I created this project while I was a teacher’s assistant at the
+                DigitalCrafts coding bootcamp. Its a prototype portal where
+                potential employers could view graduate profiles. Created with
+                react/redux on the front end and node/express on the backend.
+                View the source code
+                <a href="https://github.com/jamesjsewell/dc_alumni_portal"
+                  >here</a
+                >
+              </p>
+            </div>
+          </div>
+
+          <div class="project-wrapper">
+            <a href="https://hungrysnake.herokuapp.com/"
+              ><p class="project-title">React Snake</p></a
+            >
+            <a
+              href="https://hungrysnake.herokuapp.com/"
+              class="project-image-wrapper"
+            >
+              <img src="public/project-screenshots/snake.png" />
+            </a>
+            <div class="project-description-wrapper">
+              <p>
+                Snake clone written in React, uses Redux to handle higher level
+                state. The live app is being hosted on heroku so it may take a
+                moment to open
+                <a href="https://github.com/jamesjsewell/redux_snake">here</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="test"></div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
       $(document).ready(function() {
