@@ -105,7 +105,10 @@ textarea {
 
 body {
   width: 100vw;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  background: #81fbb8;
+  background: black;
+  background: linear-gradient(0deg, black 0%, #81fbb8 100%); }
 
 .active {
   font-style: italic;
@@ -114,13 +117,13 @@ body {
 .mobile-nav-wrapper {
   visibility: visible;
   width: 100vw;
-  padding: 10px;
+  padding: 5px;
   position: fixed;
-  z-index: 2; }
+  z-index: 2;
+  background-color: #81fbb8; }
   .mobile-nav-wrapper img {
     width: 28px;
-    height: 28px;
-    background: #81fbb8; }
+    height: 28px; }
 
 .hamburger-menu-wrapper {
   visibility: hidden;
@@ -181,7 +184,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%); }
+  background: #81fbb8; }
   .home-wrapper .content-wrapper {
     max-width: 80%;
     padding: 5px;
@@ -242,6 +245,47 @@ body {
       .home-wrapper .content-wrapper .skills-wrapper img {
         width: 30px;
         height: 30px; }
+
+.projects-section-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  background: #81fbb8;
+  background: black;
+  background: linear-gradient(0deg, black 0%, #81fbb8 100%); }
+  .projects-section-wrapper .projects-content {
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; }
+    .projects-section-wrapper .projects-content .project-wrapper {
+      margin: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #81fbb8; }
+      .projects-section-wrapper .projects-content .project-wrapper .project-title {
+        font-family: 'Roboto Condensed', sans-serif;
+        color: black; }
+      .projects-section-wrapper .projects-content .project-wrapper .project-description-wrapper {
+        width: 100%;
+        font-family: 'Roboto Condensed', sans-serif; }
+        .projects-section-wrapper .projects-content .project-wrapper .project-description-wrapper a {
+          color: black; }
+      .projects-section-wrapper .projects-content .project-wrapper .project-image-wrapper {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center; }
+        .projects-section-wrapper .projects-content .project-wrapper .project-image-wrapper img {
+          width: 100%;
+          height: auto; }
 
 .contact-section-wrapper {
   width: 100%;
@@ -305,43 +349,6 @@ body {
           color: #81fbb8;
           background: black; }
 
-.projects-section-wrapper {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1rem;
-  background-image: linear-gradient(135deg, #81fbb8 10%, #28c76f 100%); }
-  .projects-section-wrapper .projects-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px; }
-    .projects-section-wrapper .projects-content .project-wrapper {
-      margin: 10px;
-      padding: 10px;
-      display: flex;
-      flex-direction: column;
-      align-items: center; }
-      .projects-section-wrapper .projects-content .project-wrapper .project-title {
-        font-family: 'Roboto Condensed', sans-serif;
-        color: black; }
-      .projects-section-wrapper .projects-content .project-wrapper .project-description-wrapper {
-        width: 100%;
-        font-family: 'Roboto Condensed', sans-serif; }
-        .projects-section-wrapper .projects-content .project-wrapper .project-description-wrapper a {
-          color: black; }
-      .projects-section-wrapper .projects-content .project-wrapper .project-image-wrapper {
-        width: 100%;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center; }
-        .projects-section-wrapper .projects-content .project-wrapper .project-image-wrapper img {
-          width: 100%;
-          height: auto; }
-
 @media (min-width: 500px) {
   .projects-section-wrapper .projects-content {
     width: 90%;
@@ -379,4 +386,6 @@ body {
       height: 100px; }
     .home-wrapper .content-wrapper .skills-wrapper img {
       width: 40px;
-      height: 40px; } }
+      height: 40px; }
+  .projects-section-wrapper .projects-content {
+    margin-top: 0px; } }

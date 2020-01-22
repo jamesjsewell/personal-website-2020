@@ -28,18 +28,18 @@
         </li>
         <li><a class="scroll" href="#home">HOME</a></li>
         <hr />
-        <li><a class="scroll" href="#contact">CONTACT</a></li>
-        <hr />
         <li><a class="scroll" href="#projects">PROJECTS</a></li>
+        <hr />
+        <li><a class="scroll" href="#contact">CONTACT</a></li>
       </ul>
     </div>
     <div class="nav-wrapper">
       <div class="links-wrapper">
         <div><a class="scroll" href="#home">HOME</a></div>
         <div class="link-divider"></div>
-        <div><a class="scroll" href="#contact">CONTACT</a></div>
-        <div class="link-divider"></div>
         <div><a class="scroll" href="#projects">PROJECTS</a></div>
+        <div class="link-divider"></div>
+        <div><a class="scroll" href="#contact">CONTACT</a></div>
       </div>
     </div>
     <div class="page-wrapper">
@@ -47,13 +47,19 @@
         <div class="content-wrapper">
           <div class="social-links-and-logo-wrapper">
             <div class="social-links-wrapper">
-              <a class="social-icon" href="">
+              <a class="social-icon" href="https://github.com/jamesjsewell">
                 <img src="./public/social-icons/github.png" />
               </a>
-              <a class="social-icon" href="">
+              <a
+                class="social-icon"
+                href="https://www.linkedin.com/in/jamesjsewell/"
+              >
                 <img src="./public/social-icons/linkedin.png" />
               </a>
-              <a class="social-icon" href="">
+              <a
+                class="social-icon"
+                href="https://drive.google.com/uc?export=download&id=1AFwM8TEb_87oonAC0kRuCAo57R-Zl57q"
+              >
                 <img src="./public/social-icons/resume.png" />
               </a>
             </div>
@@ -89,41 +95,6 @@
             <img src="./public/skill-icons/cypress.png" />
             <img src="./public/skill-icons/jira.png" />
           </div>
-        </div>
-      </div>
-      <div id="contact" class="contact-section-wrapper">
-        <div class="contact-form-wrapper">
-          <form action="https://formspree.io/xqkpgknn" method="POST">
-            <div class="email-field-wrapper">
-              <div class="email-field">
-                <label>
-                  Your Email
-                </label>
-
-                <input
-                  class="email-input"
-                  type="text"
-                  name="_replyto"
-                  placeholder="email address"
-                />
-              </div>
-            </div>
-            <div class="message-field-wrapper">
-              <div class="message-field">
-                <label>
-                  Message
-                </label>
-                <textarea
-                  class="message-input"
-                  name="message"
-                  placeholder="hows it going?"
-                ></textarea>
-              </div>
-            </div>
-            <div class="submit-button-wrapper">
-              <button class="submit-button" type="submit">Send</button>
-            </div>
-          </form>
         </div>
       </div>
       <div id="projects" class="projects-section-wrapper">
@@ -169,7 +140,7 @@
 
           <div class="project-wrapper">
             <a href="https://hungrysnake.herokuapp.com/"
-              ><p class="project-title">React Snake</p></a
+              ><p class="project-title">Snake Clone</p></a
             >
             <a
               href="https://hungrysnake.herokuapp.com/"
@@ -181,11 +152,46 @@
               <p>
                 Snake clone written in React, uses Redux to handle higher level
                 state. The live app is being hosted on heroku so it may take a
-                moment to open
+                moment to open. View the source code here
                 <a href="https://github.com/jamesjsewell/redux_snake">here</a>
               </p>
             </div>
           </div>
+        </div>
+      </div>
+      <div id="contact" class="contact-section-wrapper">
+        <div class="contact-form-wrapper">
+          <form action="https://formspree.io/xqkpgknn" method="POST">
+            <div class="email-field-wrapper">
+              <div class="email-field">
+                <label>
+                  Your Email
+                </label>
+
+                <input
+                  class="email-input"
+                  type="text"
+                  name="_replyto"
+                  placeholder="email address"
+                />
+              </div>
+            </div>
+            <div class="message-field-wrapper">
+              <div class="message-field">
+                <label>
+                  Message
+                </label>
+                <textarea
+                  class="message-input"
+                  name="message"
+                  placeholder="hows it going?"
+                ></textarea>
+              </div>
+            </div>
+            <div class="submit-button-wrapper">
+              <button class="submit-button" type="submit">Send</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
