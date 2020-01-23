@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run watch-scss",
-    "watch-scss": "node-sass --watch ./style.scss ./style.css"
+    "watch-scss": "node-sass --watch ./style.scss ./public/style.css"
   },
   "keywords": [
     "james",
@@ -17,6 +17,7 @@
   "author": "jamesjsewell",
   "license": "ISC",
   "devDependencies": {
+    "express": "^4.17.1",
     "install": "^0.13.0",
     "node-sass": "^4.13.0",
     "npm": "^6.13.6"

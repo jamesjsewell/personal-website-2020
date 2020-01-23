@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <script src="./index.js"></script>
+    <title>James Sewell</title>
+    <link rel="shortcut icon" href="./jamesjsewell.ico" />
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link
       href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap"
@@ -15,23 +15,21 @@
   <body>
     <div class="mobile-nav-wrapper">
       <button class="hamburger">
-        <img src="public/ui/hamburger-icon.png" />
+        <img src="ui/hamburger.png" />
       </button>
     </div>
 
     <div class="hamburger-menu-wrapper">
-      <ul>
-        <li>
-          <button class="close-icon">
-            <img src="public/ui/close-icon.png" />
-          </button>
-        </li>
-        <li><a class="scroll" href="#home">HOME</a></li>
-        <hr />
-        <li><a class="scroll" href="#projects">PROJECTS</a></li>
-        <hr />
-        <li><a class="scroll" href="#contact">CONTACT</a></li>
-      </ul>
+      <div class="close-button-wrapper">
+        <button class="close-icon">
+          <img src="ui/close-icon.png" />
+        </button>
+      </div>
+      <span><a class="scroll" href="#home">HOME</a></span>
+      <hr />
+      <span><a class="scroll" href="#projects">PROJECTS</a></span>
+      <hr />
+      <span><a class="scroll" href="#contact">CONTACT</a></span>
     </div>
     <div class="nav-wrapper">
       <div class="links-wrapper">
@@ -48,25 +46,25 @@
           <div class="social-links-and-logo-wrapper">
             <div class="social-links-wrapper">
               <a class="social-icon" href="https://github.com/jamesjsewell">
-                <img src="./public/social-icons/github.png" />
+                <img src="./social-icons/github.png" />
               </a>
               <a
                 class="social-icon"
                 href="https://www.linkedin.com/in/jamesjsewell/"
               >
-                <img src="./public/social-icons/linkedin.png" />
+                <img src="./social-icons/linkedin.png" />
               </a>
               <a
                 class="social-icon"
                 href="https://drive.google.com/uc?export=download&id=1AFwM8TEb_87oonAC0kRuCAo57R-Zl57q"
               >
-                <img src="./public/social-icons/resume.png" />
+                <img src="./social-icons/resume.png" />
               </a>
             </div>
 
             <div class="logo-wrapper">
               <div class="icon-wrapper">
-                <img id="logo" src="public/social-icons/jamesjsewell.png" />
+                <img id="logo" src="social-icons/jamesjsewell.png" />
               </div>
               <div class="name-and-title-wrapper">
                 <div class="name-wrapper">James Sewell</div>
@@ -75,36 +73,36 @@
             </div>
           </div>
           <div class="skills-wrapper">
-            <img src="./public/skill-icons/javascript.png" />
-            <img src="./public/skill-icons/typescript.png" />
-            <img src="./public/skill-icons/react.png" />
-            <img src="./public/skill-icons/redux.png" />
-            <img src="./public/skill-icons/angular.png" />
-            <img src="./public/skill-icons/rxjs.png" />
-            <img src="./public/skill-icons/backbone.png" />
-            <img src="./public/skill-icons/jquery.png" />
-            <img src="./public/skill-icons/html.png" />
-            <img src="./public/skill-icons/css.png" />
-            <img src="./public/skill-icons/photoshop.png" />
-            <img src="./public/skill-icons/illustrator.png" />
-            <img src="./public/skill-icons/nodejs.png" />
-            <img src="./public/skill-icons/mongodb.png" />
-            <img src="./public/skill-icons/terminal.png" />
-            <img src="./public/skill-icons/git.png" />
-            <img src="./public/skill-icons/github.png" />
-            <img src="./public/skill-icons/cypress.png" />
-            <img src="./public/skill-icons/jira.png" />
+            <img src="./skill-icons/javascript.png" />
+            <img src="./skill-icons/typescript.png" />
+            <img src="./skill-icons/react.png" />
+            <img src="./skill-icons/redux.png" />
+            <img src="./skill-icons/angular.png" />
+            <img src="./skill-icons/rxjs.png" />
+            <img src="./skill-icons/backbone.png" />
+            <img src="./skill-icons/jquery.png" />
+            <img src="./skill-icons/html.png" />
+            <img src="./skill-icons/css.png" />
+            <img src="./skill-icons/photoshop.png" />
+            <img src="./skill-icons/illustrator.png" />
+            <img src="./skill-icons/nodejs.png" />
+            <img src="./skill-icons/mongodb.png" />
+            <img src="./skill-icons/terminal.png" />
+            <img src="./skill-icons/git.png" />
+            <img src="./skill-icons/github.png" />
+            <img src="./skill-icons/cypress.png" />
+            <img src="./skill-icons/jira.png" />
           </div>
         </div>
       </div>
       <div id="projects" class="projects-section-wrapper">
         <div class="projects-content">
           <div class="project-wrapper">
-            <a href="http://guitarro.surge.sh/"
-              ><p class="project-title">Guitar Fretboard Webapp</p></a
+            <a class="project-title" href="http://guitarro.surge.sh/"
+              >Guitar Fretboard Webapp</a
             >
             <a href="http://guitarro.surge.sh/" class="project-image-wrapper">
-              <img src="public/project-screenshots/guitar-app.png" />
+              <img src="project-screenshots/guitar-app.png" />
             </a>
             <div class="project-description-wrapper">
               <p>
@@ -118,11 +116,11 @@
           </div>
 
           <div class="project-wrapper">
-            <a href="http://alumni.surge.sh/"
-              ><p class="project-title">Graduate Profiles Prototype</p></a
+            <a class="project-title" href="http://alumni.surge.sh/"
+              >Graduate Profiles Prototype</a
             >
             <a href="http://alumni.surge.sh/" class="project-image-wrapper">
-              <img src="public/project-screenshots/dc-alumni-app.png" />
+              <img src="project-screenshots/dc-alumni-app.png" />
             </a>
             <div class="project-description-wrapper">
               <p>
@@ -139,14 +137,14 @@
           </div>
 
           <div class="project-wrapper">
-            <a href="https://hungrysnake.herokuapp.com/"
-              ><p class="project-title">Snake Clone</p></a
+            <a class="project-title" href="https://hungrysnake.herokuapp.com/"
+              >Snake Clone</a
             >
             <a
               href="https://hungrysnake.herokuapp.com/"
               class="project-image-wrapper"
             >
-              <img src="public/project-screenshots/snake.png" />
+              <img src="project-screenshots/snake.png" />
             </a>
             <div class="project-description-wrapper">
               <p>
@@ -154,6 +152,22 @@
                 state. The live app is being hosted on heroku so it may take a
                 moment to open. View the source code here
                 <a href="https://github.com/jamesjsewell/redux_snake">here</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="project-wrapper">
+            <a class="project-title" href="">Personal Site</a>
+            <a href="" class="project-image-wrapper">
+              <img src="project-screenshots/personal-site.png" />
+            </a>
+            <div class="project-description-wrapper">
+              <p>
+                I decided to write this website using html/css/jquery since it's
+                a simple static page. View the source code here
+                <a href="https://github.com/jamesjsewell/personal-website-2020"
+                  >here</a
+                >
               </p>
             </div>
           </div>
