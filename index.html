@@ -32,8 +32,10 @@
       <span><a class="scroll" href="#contact">CONTACT</a></span>
     </div>
     <div class="nav-wrapper">
+      <div class="logo-wrapper">
+        <a href="#home"><img id="logo" src="public/social-icons/jamesjsewell.png" /></a>
+      </div>
       <div class="links-wrapper">
-        <div><a class="scroll" href="#home">HOME</a></div>
         <div class="link-divider"></div>
         <div><a class="scroll" href="#projects">PROJECTS</a></div>
         <div class="link-divider"></div>
@@ -42,9 +44,11 @@
     </div>
     <div class="page-wrapper">
       <div id="home" class="home-wrapper">
+        <div class="title-wrapper"> <p>My name is James Sewell, I build things for the web</p></div>
+       
         <div class="content-wrapper">
-          <div class="social-links-and-logo-wrapper">
-            <div class="social-links-wrapper">
+          <!-- <div class="logo-wrapper"> -->
+            <!-- <div class="social-links-wrapper">
               <a class="social-icon" href="https://github.com/jamesjsewell">
                 <img src="public/social-icons/github.png" />
               </a>
@@ -60,19 +64,11 @@
               >
                 <img src="public/social-icons/resume.png" />
               </a>
-            </div>
+            </div> -->
 
-            <div class="logo-wrapper">
-              <div class="icon-wrapper">
-                <img id="logo" src="public/social-icons/jamesjsewell.png" />
-              </div>
-              <div class="name-and-title-wrapper">
-                <div class="name-wrapper">James Sewell</div>
-                <div class="title-wrapper">Software Engineer</div>
-              </div>
-            </div>
+            
           </div>
-          <div class="skills-wrapper">
+          <!-- <div class="skills-wrapper">
             <img src="public/skill-icons/javascript.png" />
             <img src="public/skill-icons/typescript.png" />
             <img src="public/skill-icons/react.png" />
@@ -91,11 +87,33 @@
             <img src="public/skill-icons/github.png" />
             <img src="public/skill-icons/cypress.png" />
             <img src="public/skill-icons/jira.png" />
-          </div>
+          </div> -->
         </div>
       </div>
       <div id="projects" class="projects-section-wrapper">
         <div class="projects-content">
+          <div class="project-wrapper">
+            <a class="project-title" href="https://tonalify.herokuapp.com"
+              >Spotify
+            </a>
+            <a
+              href="https://tonalify.herokuapp.com"
+              class="project-image-wrapper"
+            >
+              <img src="public/project-screenshots/tonalify.png" />
+            </a>
+            <div class="project-description-wrapper">
+              <p>
+                Webapp that enables users to view the key and tempo of songs in
+                their spotify library. Users can select songs based on key and
+                tempo and export their selections to their spotify account as
+                playlists. Frontend is built with react/redux, and the backend
+                is built with express. The backend consumes the spotify api on
+                the user's behalf using oauth. View the source code
+                <a href="https://github.com/jamesjsewell/tonalify">here</a>
+              </p>
+            </div>
+          </div>
           <div class="project-wrapper">
             <a class="project-title" href="http://guitarro.surge.sh/"
               >Guitar Fretboard Webapp</a
@@ -214,7 +232,7 @@
       $(document).ready(function() {
         var scrollLink = $('.scroll');
 
-        // Smooth scrolling
+        // smooth scrolling
         scrollLink.click(function(e) {
           e.preventDefault();
           $('body,html').animate(
@@ -225,7 +243,7 @@
           );
         });
 
-        // Active link switching
+        // active link switching
         $(window).scroll(function() {
           var scrollbarLocation = $(this).scrollTop();
 
@@ -244,17 +262,16 @@
             }
           });
         });
-      });
-    </script>
 
-    <script>
-      $(document).ready(function() {
+        // show hide hamburger menu
         $('.hamburger').click(function() {
           $('.hamburger-menu-wrapper').css('visibility', 'visible');
         });
         $('.close-icon').click(function() {
           $('.hamburger-menu-wrapper').css('visibility', 'hidden');
         });
+
+        // populate projects
       });
     </script>
   </body>
