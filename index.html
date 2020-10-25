@@ -33,7 +33,7 @@
     </div>
     <div class="nav-wrapper">
       <div class="logo-wrapper">
-        <a href="#home"><img id="logo" src="public/social-icons/jamesjsewell.png" /></a>
+        <a id="logo" class="scroll" href="#home"><img  src="public/social-icons/jamesjsewell.png" /></a>
       </div>
       <div class="links-wrapper">
         <div class="link-divider"></div>
@@ -44,7 +44,15 @@
     </div>
     <div class="page-wrapper">
       <div id="home" class="home-wrapper">
-        <div class="title-wrapper"> <p>My name is James Sewell, I build things for the web</p></div>
+        <div class="overlay-wrapper">
+          <div id="down-button" class="chevrons">
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+            <div class="chevron"></div>
+          </div>  
+          <div class="title-wrapper"> <p>I'm James & I build things for the web.</p></div>
+        </div>
+        
        
         <div class="content-wrapper">
           <!-- <div class="logo-wrapper"> -->
@@ -247,9 +255,18 @@
         $(window).scroll(function() {
           var scrollbarLocation = $(this).scrollTop();
 
+          // fade hero section background
+          var homeSection = document.getElementById("home")
+          homeSection.style.opacity = 1 - +window.pageYOffset/550+''
+        
+
           scrollLink.each(function() {
             var sectionOffset = $(this.hash).offset().top - 20;
-
+            $(this).parent().removeClass('active');
+            if($(this).parent().attr("id") == "logo" || $(this).attr("id")  == "logo"){
+              return
+            }
+     
             if (sectionOffset <= scrollbarLocation) {
               $(this)
                 .parent()
@@ -270,6 +287,15 @@
         $('.close-icon').click(function() {
           $('.hamburger-menu-wrapper').css('visibility', 'hidden');
         });
+
+        $('#down-button').click(function() {
+          $('body,html').animate(
+            {
+              scrollTop: $('#projects').offset().top
+            },
+            500
+          );
+        })
 
         // populate projects
       });
