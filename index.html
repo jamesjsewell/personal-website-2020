@@ -1,39 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>James Sewell</title>
-    <link rel="shortcut icon" href="public/jamesjsewell.ico" />
-    <link href="public/style.css" rel="stylesheet" type="text/css" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="mobile-nav-wrapper">
-      <button class="hamburger">
-        <img src="public/ui/hamburger.png" />
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>James Sewell</title>
+  <link rel="shortcut icon" href="public/jamesjsewell.ico" />
+  <link href="public/style.css" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.0/slick/slick-theme.css" />
+
+</head>
+
+<body>
+  <div class="mobile-nav-wrapper">
+    <button class="hamburger">
+      <img src="public/ui/hamburger.png" />
+    </button>
+  </div>
+
+  <div class="hamburger-menu-wrapper">
+    <div class="close-button-wrapper">
+      <button class="close-icon">
+        <img src="public/ui/close-icon.png" />
       </button>
     </div>
-
-    <div class="hamburger-menu-wrapper">
-      <div class="close-button-wrapper">
-        <button class="close-icon">
-          <img src="public/ui/close-icon.png" />
-        </button>
-      </div>
-      <span><a class="scroll" href="#home">HOME</a></span>
-      <hr />
-      <span><a class="scroll" href="#projects">PROJECTS</a></span>
-      <hr />
-      <span><a class="scroll" href="#contact">CONTACT</a></span>
-    </div>
-    <div class="nav-wrapper">
+    <span><a class="scroll" href="#home">HOME</a></span>
+    <hr />
+    <span><a class="scroll" href="#projects">PROJECTS</a></span>
+    <hr />
+    <span><a class="scroll" href="#contact">CONTACT</a></span>
+  </div>
+  <!-- <div class="nav-wrapper">
       <div class="logo-wrapper">
-        <a id="logo" class="scroll" href="#home"><img  src="public/social-icons/jamesjsewell.png" /></a>
+        <a id="logo" class="scroll" href="#home"><img  src="public/social-icons/jamesjsewell-white.png" /></a>
       </div>
       <div class="links-wrapper">
         <div class="link-divider"></div>
@@ -41,66 +45,46 @@
         <div class="link-divider"></div>
         <div><a class="scroll" href="#contact">CONTACT</a></div>
       </div>
-    </div>
-    <div class="page-wrapper">
-      <div id="home" class="home-wrapper">
-        <div class="overlay-wrapper">
-          <div id="down-button" class="chevrons">
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-            <div class="chevron"></div>
-          </div>  
-          <div class="title-wrapper"> <p>I'm James & I build things for the web.</p></div>
-        </div>
-        
-       
-        <div class="content-wrapper">
-          <!-- <div class="logo-wrapper"> -->
-            <!-- <div class="social-links-wrapper">
-              <a class="social-icon" href="https://github.com/jamesjsewell">
-                <img src="public/social-icons/github.png" />
-              </a>
-              <a
-                class="social-icon"
-                href="https://www.linkedin.com/in/jamesjsewell/"
-              >
-                <img src="public/social-icons/linkedin.png" />
-              </a>
-              <a
-                class="social-icon"
-                href="http://dl.dropboxusercontent.com/s/wg7if8vo5rqr8vp/james_sewell_resume_2020.pdf?dl=0"
-              >
-                <img src="public/social-icons/resume.png" />
-              </a>
-            </div> -->
+    </div> -->
+  <div class="page-wrapper">
+    <div id="modal" class="modal-overlay hide">
+      <div class="modal-content">
+        <div id="close-modal" class="close-icon"></div>
+        <img id="current-slide-img" />
+        <div>
+          <div id="carousel-wrapper" class="carousel-wrapper">
 
-            
           </div>
-          <!-- <div class="skills-wrapper">
-            <img src="public/skill-icons/javascript.png" />
-            <img src="public/skill-icons/typescript.png" />
-            <img src="public/skill-icons/react.png" />
-            <img src="public/skill-icons/redux.png" />
-            <img src="public/skill-icons/angular.png" />
-            <img src="public/skill-icons/rxjs.png" />
-            <img src="public/skill-icons/jquery.png" />
-            <img src="public/skill-icons/html.png" />
-            <img src="public/skill-icons/css.png" />
-            <img src="public/skill-icons/photoshop.png" />
-            <img src="public/skill-icons/illustrator.png" />
-            <img src="public/skill-icons/nodejs.png" />
-            <img src="public/skill-icons/mongodb.png" />
-            <img src="public/skill-icons/terminal.png" />
-            <img src="public/skill-icons/git.png" />
-            <img src="public/skill-icons/github.png" />
-            <img src="public/skill-icons/cypress.png" />
-            <img src="public/skill-icons/jira.png" />
-          </div> -->
         </div>
+
       </div>
-      <div id="projects" class="projects-section-wrapper">
-        <div class="projects-content">
-          <div class="project-wrapper">
+    </div>
+  </div>
+  <div id="home" class="home-wrapper">
+    <div class="down-button-and-title">
+      <div class="title-wrapper">
+        <p>I'm James & I build things for the web.</p>
+      </div>
+      <div id="down-button" class="chevrons">
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+        <div class="chevron"></div>
+      </div>
+    </div>
+    <div class="logo-bg-wrapper">
+      <div class="logo-bg"></div>
+      <svg class="logo-svg">
+        <clipPath id="myClip" clipPathUnits="objectBoundingBox">
+          <path
+            d="M0.833,0.983 V1 h0.167 V0.8 h-0.014 A0.251,0.301,0,0,1,0.833,0.983 M0.833,0 V0.017 A0.251,0.301,0,0,1,0.986,0.2 H1 V0 M0.833,0.4 V0.3 a0.083,0.1,0,1,0,-0.083,0.1 a0.255,0.306,0,0,1,0.083,0.017 A0.252,0.302,0,0,1,0.986,0.6 H1 V0.4 H0.833 M0.75,0.6 a0.251,0.301,0,0,1,-0.186,-0.1 a0.249,0.299,0,0,1,-0.063,-0.2 V0 h-0.167 V0.7 a0.083,0.1,0,1,1,-0.167,0 V0.6 H0 v0.1 a0.245,0.294,0,0,0,0.014,0.1 a0.25,0.3,0,0,0,0.472,0 a0.245,0.294,0,0,0,0.014,-0.1 V0.6 h0.167 v0.1 a0.083,0.1,0,1,0,0.083,-0.1">
+          </path>
+        </clipPath>
+      </svg>
+    </div>
+  </div>
+  <div id="projects" class="projects-section-wrapper">
+    <div id="projects-content" class="projects-content">
+      <!-- <div class="project-wrapper">
             <a class="project-title" href="https://tonalify.herokuapp.com"
               >Spotify
             </a>
@@ -195,110 +179,227 @@
                 >
               </p>
             </div>
+          </div> -->
+    </div>
+  </div>
+  <div id="contact" class="contact-section-wrapper">
+    <div class="contact-form-wrapper">
+      <form action="https://formspree.io/xqkpgknn" method="POST">
+        <div class="email-field-wrapper">
+          <div class="email-field">
+            <label>
+              Your Email
+            </label>
+
+            <input class="email-input" type="text" name="_replyto" placeholder="email address" />
           </div>
         </div>
-      </div>
-      <div id="contact" class="contact-section-wrapper">
-        <div class="contact-form-wrapper">
-          <form action="https://formspree.io/xqkpgknn" method="POST">
-            <div class="email-field-wrapper">
-              <div class="email-field">
-                <label>
-                  Your Email
-                </label>
-
-                <input
-                  class="email-input"
-                  type="text"
-                  name="_replyto"
-                  placeholder="email address"
-                />
-              </div>
-            </div>
-            <div class="message-field-wrapper">
-              <div class="message-field">
-                <label>
-                  Message
-                </label>
-                <textarea
-                  class="message-input"
-                  name="message"
-                  placeholder="hows it going?"
-                ></textarea>
-              </div>
-            </div>
-            <div class="submit-button-wrapper">
-              <button class="submit-button" type="submit">Send</button>
-            </div>
-          </form>
+        <div class="message-field-wrapper">
+          <div class="message-field">
+            <label>
+              Message
+            </label>
+            <textarea class="message-input" name="message" placeholder="hows it going?"></textarea>
+          </div>
         </div>
-      </div>
+        <div class="submit-button-wrapper">
+          <button class="submit-button" type="submit">Send</button>
+        </div>
+      </form>
     </div>
+  </div>
+  </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        var scrollLink = $('.scroll');
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-        // smooth scrolling
-        scrollLink.click(function(e) {
-          e.preventDefault();
-          $('body,html').animate(
-            {
-              scrollTop: $(this.hash).offset().top
-            },
-            500
-          );
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.0/slick/slick.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      var scrollLink = $('.scroll');
+
+      // smooth scrolling
+      scrollLink.click(function (e) {
+        e.preventDefault();
+        $('body,html').animate(
+          {
+            scrollTop: $(this.hash).offset().top
+          },
+          500
+        );
+      });
+
+      // active link switching
+      $(window).scroll(function () {
+        var scrollbarLocation = $(this).scrollTop();
+
+        // fade hero section background
+        var homeSection = document.getElementById("home")
+        homeSection.style.opacity = 1 - +window.pageYOffset / 550 + ''
+
+
+        scrollLink.each(function () {
+          var sectionOffset = $(this.hash).offset().top - 20;
+          $(this).parent().removeClass('active');
+          if ($(this).parent().attr("id") == "logo" || $(this).attr("id") == "logo") {
+            return
+          }
+
+          if (sectionOffset <= scrollbarLocation) {
+            $(this)
+              .parent()
+              .addClass('active');
+            $(this)
+              .parent()
+              .siblings()
+              .removeClass('active');
+            $('.hamburger-menu-wrapper').css('visibility', 'hidden');
+          }
         });
+      });
 
-        // active link switching
-        $(window).scroll(function() {
-          var scrollbarLocation = $(this).scrollTop();
+      // show hide hamburger menu
+      $('.hamburger').click(function () {
+        $('.hamburger-menu-wrapper').css('visibility', 'visible');
+      });
+      $('.close-icon').click(function () {
+        $('.hamburger-menu-wrapper').css('visibility', 'hidden');
+      });
 
-          // fade hero section background
-          var homeSection = document.getElementById("home")
-          homeSection.style.opacity = 1 - +window.pageYOffset/550+''
-        
+      $('#down-button').click(function () {
+        $('body,html').animate(
+          {
+            scrollTop: $('#projects').offset().top
+          },
+          500
+        );
+      })
 
-          scrollLink.each(function() {
-            var sectionOffset = $(this.hash).offset().top - 20;
-            $(this).parent().removeClass('active');
-            if($(this).parent().attr("id") == "logo" || $(this).attr("id")  == "logo"){
-              return
-            }
-     
-            if (sectionOffset <= scrollbarLocation) {
-              $(this)
-                .parent()
-                .addClass('active');
-              $(this)
-                .parent()
-                .siblings()
-                .removeClass('active');
-              $('.hamburger-menu-wrapper').css('visibility', 'hidden');
-            }
-          });
-        });
+      // populate projects
+      var projects = [
+        {
+          id: 'tonalify',
+          title: 'TONALIFY',
+          description: 'Webapp that enables users to view the key and tempo of songs in their spotify library. Users can select songs based on key and tempo and export their selections to their spotify account as playlists',
+          source: 'https://github.com/jamesjsewell/tonalify',
+          live: 'https://tonalify.herokuapp.com/',
+          tech: [],
+          cover: 'public/project-screenshots/tonalify-cover.png',
+          screenshots: ['public/project-screenshots/tonalify.png', 'public/project-screenshots/guitar-cover.png', 'public/project-screenshots/dc-alumni-cover.png']
+        },
+        {
+          id: 'guitar',
+          title: 'GUITAR FRETBOARD',
+          description: 'Webapp that visualizes a guitar fretboard with notes and allows the user to select the key and scale. I built this to help teach myself guitar theory. It’s written in pure javascript and the rendering is done using css only.',
+          source: 'https://github.com/jamesjsewell/guitarro',
+          live: 'http://guitarro.surge.sh/',
+          tech: [],
+          cover: 'public/project-screenshots/guitar-cover.png',
+          screenshots: ['public/project-screenshots/guitar-app.png']
+        },
+        {
+          id: 'alumni',
+          title: 'ALUMNI PROFILES',
+          description: 'I created this project while I was a TA at the DigitalCrafts coding bootcamp. Its a prototype portal where potential employers could view graduate profiles',
+          source: 'https://github.com/jamesjsewell/dc_alumni_portal',
+          live: 'http://alumni.surge.sh/',
+          tech: [],
+          cover: 'public/project-screenshots/dc-alumni-cover.png',
+          screenshots: ['public/project-screenshots/dc-alumni-app.png']
+        }
+      ]
 
-        // show hide hamburger menu
-        $('.hamburger').click(function() {
-          $('.hamburger-menu-wrapper').css('visibility', 'visible');
-        });
-        $('.close-icon').click(function() {
-          $('.hamburger-menu-wrapper').css('visibility', 'hidden');
-        });
+      for (var i = 0; i < projects.length; i++) {
 
-        $('#down-button').click(function() {
-          $('body,html').animate(
-            {
-              scrollTop: $('#projects').offset().top
-            },
-            500
-          );
+        var projectWrapper = $("<button>", { id: projects[i].id, class: "project-wrapper", style: "background-image: url('" + projects[i].cover + "')" })
+        var projectCover = $("<div>", { class: "project-color-overlay" })
+        var projectTitle = $("<p class='project-title'>" + projects[i].title + "</p>")
+
+        projectWrapper.append(projectCover)
+        projectWrapper.append(projectTitle)
+        $("#projects-content").append(projectWrapper)
+
+      }
+
+      $('#close-modal').click(function () {
+        $("#modal").addClass("hide");
+        $('.carousel-wrapper').slick("unslick")
+      })
+
+      $('.project-wrapper').click(function (el) {
+
+        $("#modal").removeClass("hide");
+
+        var projectId = el.target.closest('button').id
+        var project = projects.find(function (proj) {
+          if (proj.id === projectId) return proj
         })
 
-        // populate projects
-      });
-    </script>
-  </body>
+        $("#current-slide-img").attr("src", project.screenshots[0])
+        $("#carousel-wrapper").html("")
+        for (var i = 0; i < project.screenshots.length; i++) {
+          var carouselItem = $("<div>", { class: "carousel-item" })
+          var screenshot = $("<img>", { src: project.screenshots[i], class: "carousel-image" })
+          carouselItem.append(screenshot)
+          $("#carousel-wrapper").append(carouselItem)
+        }
+
+        $('.carousel-wrapper').slick({
+          dots: true,
+          infinite: true,
+          centerMode: true,
+          centerPadding: '20px',
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          adaptiveHeight: true,
+          // responsive: [
+          //   {
+          //     breakpoint: 768,
+          //     settings: {
+          //       arrows: false,
+          //       centerMode: true,
+          //       centerPadding: '40px',
+          //       slidesToShow: 3
+          //     }
+          //   },
+          //   {
+          //     breakpoint: 480,
+          //     settings: {
+          //       arrows: false,
+          //       centerMode: true,
+          //       centerPadding: '40px',
+          //       slidesToShow: 1
+          //     }
+          //   }
+          // ]
+        }).on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
+          //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+          console.log(currentSlide)
+          $("#current-slide-img").attr("src", projects[0].screenshots[currentSlide])
+        });
+
+        $('[data-slide]').click(function(e){
+  var slideno = $(this).data('slide');
+  $('.item__wrapper').slick('slickGoTo', slideno);
+});
+
+
+
+
+
+
+      })
+
+
+
+
+
+
+
+
+
+    })
+
+  </script>
+</body>
+
 </html>

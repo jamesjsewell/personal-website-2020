@@ -105,11 +105,14 @@ textarea {
 
 body {
   overflow-x: hidden;
-  background: black; }
+  background-color: #1e1e20; }
+
+.hide {
+  visibility: hidden; }
 
 .active {
   font-style: italic;
-  border-bottom: 1px solid black !important; }
+  border-bottom: 1px solid white !important; }
 
 .mobile-nav-wrapper {
   visibility: visible;
@@ -131,7 +134,7 @@ body {
   left: 0;
   z-index: 3;
   background: #d2d2d2;
-  border: 1px solid black; }
+  border: 1px solid white; }
   .hamburger-menu-wrapper .close-button-wrapper {
     display: flex;
     justify-content: flex-end;
@@ -147,7 +150,7 @@ body {
       display: block;
       width: 100%;
       padding: 5px;
-      color: black;
+      color: white;
       font-family: 'Roboto Condensed', sans-serif;
       font-size: 1rem;
       text-decoration: none; }
@@ -187,7 +190,7 @@ body {
     align-items: center; }
     .nav-wrapper .links-wrapper a {
       padding: 0px 10px 0px 10px;
-      color: black;
+      color: white;
       text-align: center;
       font-family: 'Roboto Condensed', sans-serif;
       font-size: 0.8rem;
@@ -197,61 +200,100 @@ body {
       width: 0px;
       height: 0px; }
 
+.modal-overlay {
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 500; }
+  .modal-overlay .modal-content {
+    width: 90vw;
+    height: 90vh;
+    background: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    border-radius: 10px; }
+    .modal-overlay .modal-content .close-icon {
+      cursor: pointer;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      width: 40px;
+      height: 40px;
+      background-image: url("../public/ui/close-icon.png");
+      background-position: center;
+      background-size: contain; }
+    .modal-overlay .modal-content .slick-prev {
+      left: 20px !important;
+      z-index: 100; }
+    .modal-overlay .modal-content .slick-next {
+      right: 20px !important;
+      z-index: 100; }
+    .modal-overlay .modal-content .carousel-item {
+      overflow: hidden;
+      height: 200px;
+      position: relative; }
+    .modal-overlay .modal-content .carousel-image {
+      width: 50%;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+    .modal-overlay .modal-content #current-slide-img {
+      width: 200px;
+      height: 200px; }
+
 .page-wrapper {
   min-width: 200px; }
 
 .home-wrapper {
-  background: url("../public/hero-image/hero-image.jpg") no-repeat center;
-  background-attachment: fixed;
-  background-size: cover;
-  background-color: #0078ff;
-  width: 100%;
   height: 100vh;
+  width: 100%;
   display: flex;
+  flex-direction: column-reverse;
   align-items: center;
-  justify-content: center;
   font-size: 4rem;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: bolder;
-  color: black; }
-  .home-wrapper .overlay-wrapper {
-    height: 98vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 200; }
-    .home-wrapper .overlay-wrapper .chevrons {
+  color: white;
+  background-attachment: fixed;
+  background-size: auto 50%;
+  animation: bgFrames 800ms steps(8) infinite;
+  background-image: url("../public/ui/bg-pixels.jpg"); }
+  .home-wrapper .down-button-and-title {
+    height: 20%; }
+    .home-wrapper .down-button-and-title .chevrons {
       cursor: pointer;
       position: relative;
       width: 28px;
       height: 50px; }
-    .home-wrapper .overlay-wrapper .chevron {
+    .home-wrapper .down-button-and-title .chevron {
       position: absolute;
       width: 28px;
       height: 8px;
       opacity: 0;
       transform: scale3d(0.5, 0.5, 0.5);
       animation: move 3s ease-out infinite; }
-    .home-wrapper .overlay-wrapper .chevron:first-child {
+    .home-wrapper .down-button-and-title .chevron:first-child {
       animation: move 3s ease-out 1s infinite; }
-    .home-wrapper .overlay-wrapper .chevron:nth-child(2) {
+    .home-wrapper .down-button-and-title .chevron:nth-child(2) {
       animation: move 3s ease-out 2s infinite; }
-    .home-wrapper .overlay-wrapper .chevron:before,
-    .home-wrapper .overlay-wrapper .chevron:after {
+    .home-wrapper .down-button-and-title .chevron:before,
+    .home-wrapper .down-button-and-title .chevron:after {
       content: ' ';
       position: absolute;
       top: 0;
       height: 100%;
       width: 51%;
-      background: black; }
-    .home-wrapper .overlay-wrapper .chevron:before {
+      background: white; }
+    .home-wrapper .down-button-and-title .chevron:before {
       left: 0;
       transform: skew(0deg, 30deg); }
-    .home-wrapper .overlay-wrapper .chevron:after {
+    .home-wrapper .down-button-and-title .chevron:after {
       right: 0;
       width: 50%;
       transform: skew(0deg, -30deg); }
@@ -272,6 +314,26 @@ body {
 @keyframes pulse {
   to {
     opacity: 1; } }
+  .home-wrapper .logo-bg-wrapper {
+    height: 80%; }
+    .home-wrapper .logo-bg-wrapper .logo-svg {
+      position: absolute;
+      width: 0;
+      height: 0; }
+    .home-wrapper .logo-bg-wrapper .logo-bg {
+      width: 30vw;
+      height: 25vw;
+      margin: 20px;
+      background: #16ADE3;
+      background-attachment: fixed;
+      background-size: auto 50%;
+      animation: bgFrames 800ms steps(8) infinite;
+      background-image: url("../public/ui/bg-pixels-grey.jpg");
+      clip-path: url("#myClip"); }
+
+@keyframes bgFrames {
+  100% {
+    background-position: -300% 0; } }
 
 .projects-section-wrapper {
   width: 100%;
@@ -279,98 +341,44 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem; }
+  font-size: 1rem;
+  background: #1e1e20; }
   .projects-section-wrapper .projects-content {
     margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center; }
     .projects-section-wrapper .projects-content .project-wrapper {
-      margin-bottom: 5px;
-      margin-top: 5px;
+      width: 400px;
+      height: 400px;
+      border-radius: 10px;
+      margin: 5px;
       padding: 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background-color: #d2d2d2; }
+      background-color: #16ADE3;
+      overflow: hidden;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-blend-mode: multiply;
+      position: relative;
+      box-shadow: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 16px rgba(0, 0, 0, 0.5); }
       .projects-section-wrapper .projects-content .project-wrapper .project-title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 3rem;
         font-family: 'Roboto Condensed', sans-serif;
-        color: black; }
+        font-weight: bolder;
+        color: white; }
       .projects-section-wrapper .projects-content .project-wrapper .project-description-wrapper {
         width: 100%;
         font-family: 'Roboto Condensed', sans-serif; }
         .projects-section-wrapper .projects-content .project-wrapper .project-description-wrapper a {
-          color: black; }
-      .projects-section-wrapper .projects-content .project-wrapper .project-image-wrapper {
-        width: 100%;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center; }
-        .projects-section-wrapper .projects-content .project-wrapper .project-image-wrapper img {
-          width: 100%;
-          height: auto; }
-
-.contact-section-wrapper {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-  .contact-section-wrapper .contact-form-wrapper {
-    max-width: 300px;
-    width: 100%;
-    min-height: 200px;
-    background: #d2d2d2; }
-    .contact-section-wrapper .contact-form-wrapper form {
-      display: flex;
-      flex-direction: column;
-      align-items: left;
-      font-family: 'Roboto Condensed', sans-serif;
-      width: 100%; }
-      .contact-section-wrapper .contact-form-wrapper form ::placeholder {
-        color: rgba(0, 0, 0, 0.5);
-        opacity: 1; }
-      .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper {
-        width: 100%; }
-        .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper .email-field {
-          margin: auto;
-          width: 90%;
-          margin-top: 15px;
-          margin-bottom: 30px;
-          display: flex;
-          flex-direction: column; }
-          .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper .email-field label {
-            margin-bottom: 5px; }
-          .contact-section-wrapper .contact-form-wrapper form .email-field-wrapper .email-field .email-input {
-            padding: 5px;
-            border-bottom: 1px solid black; }
-      .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper {
-        width: 100%; }
-        .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper .message-field {
-          margin: auto;
-          width: 90%;
-          min-height: 100px;
-          display: flex;
-          flex-direction: column; }
-          .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper .message-field label {
-            margin-bottom: 10px; }
-          .contact-section-wrapper .contact-form-wrapper form .message-field-wrapper .message-field .message-input {
-            height: 100px;
-            max-height: 200px;
-            padding: 5px;
-            resize: vertical;
-            border-bottom: 1px solid black; }
-      .contact-section-wrapper .contact-form-wrapper form .submit-button-wrapper {
-        width: 100%;
-        display: flex;
-        justify-content: flex-end; }
-        .contact-section-wrapper .contact-form-wrapper form .submit-button-wrapper .submit-button {
-          width: 80px;
-          margin: 10px;
-          padding: 5px;
-          color: #d2d2d2;
-          background: black; }
+          color: white; }
 
 @media (min-width: 500px) {
   .projects-section-wrapper .projects-content {
