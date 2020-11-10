@@ -48,13 +48,24 @@
     </div> -->
   <div class="page-wrapper">
     <div id="modal" class="modal-overlay hide">
+
       <div class="modal-content">
         <div id="close-modal" class="close-icon"></div>
-        <img id="current-slide-img" />
-        <div>
+
+        <div class="screenshot-wrapper">
+          <img id="current-slide-img" />
           <div id="carousel-wrapper" class="carousel-wrapper">
 
           </div>
+
+        </div>
+
+        <div class="project-info-wrapper">
+          <h3 id="project-modal-title"></h3>
+          <div>
+            <p id="project-modal-description"></p>
+          </div>
+
         </div>
 
       </div>
@@ -284,7 +295,7 @@
           live: 'https://tonalify.herokuapp.com/',
           tech: [],
           cover: 'public/project-screenshots/tonalify-cover.png',
-          screenshots: ['public/project-screenshots/tonalify.png', 'public/project-screenshots/guitar-cover.png', 'public/project-screenshots/dc-alumni-cover.png']
+          screenshots: [ 'public/project-screenshots/dc-alumni-cover.png', 'public/project-screenshots/guitar-cover.png', 'public/project-screenshots/dc-alumni-cover.png']
         },
         {
           id: 'guitar',
@@ -334,7 +345,8 @@
           if (proj.id === projectId) return proj
         })
 
-        $("#current-slide-img").attr("src", project.screenshots[0])
+        $("#project-modal-title").html(project.title)
+        $("#project-modal-description").html(project.description)
         $("#carousel-wrapper").html("")
         for (var i = 0; i < project.screenshots.length; i++) {
           var carouselItem = $("<div>", { class: "carousel-item" })
@@ -350,7 +362,9 @@
           centerPadding: '20px',
           slidesToShow: 1,
           slidesToScroll: 1,
+          variableWidth: true,
           adaptiveHeight: true,
+          respondTo: 'slider'
           // responsive: [
           //   {
           //     breakpoint: 768,
@@ -377,10 +391,10 @@
           $("#current-slide-img").attr("src", projects[0].screenshots[currentSlide])
         });
 
-        $('[data-slide]').click(function(e){
-  var slideno = $(this).data('slide');
-  $('.item__wrapper').slick('slickGoTo', slideno);
-});
+        $('[data-slide]').click(function (e) {
+          var slideno = $(this).data('slide');
+          $('.item__wrapper').slick('slickGoTo', slideno);
+        });
 
 
 
