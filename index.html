@@ -48,12 +48,12 @@
     </div> -->
   <div class="page-wrapper">
     <div id="modal" class="modal-overlay hide">
-
+      <div id="close-modal" class="close-icon">X</div>
       <div class="modal-content">
-        <div id="close-modal" class="close-icon"></div>
-
         <div class="screenshot-wrapper">
-          <img id="current-slide-img" />
+          <div class="current-slide-img-wrapper">
+            <img id="current-slide-img" />
+          </div>
           <div id="carousel-wrapper" class="carousel-wrapper">
 
           </div>
@@ -344,7 +344,7 @@
         var project = projects.find(function (proj) {
           if (proj.id === projectId) return proj
         })
-
+        $("#current-slide-img").attr("src", project.screenshots[0])
         $("#project-modal-title").html(project.title)
         $("#project-modal-description").html(project.description)
         $("#carousel-wrapper").html("")
