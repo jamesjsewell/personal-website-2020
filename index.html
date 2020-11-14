@@ -8,7 +8,8 @@
   <title>James Sewell</title>
   <link rel="shortcut icon" href="public/jamesjsewell.ico" />
   <link href="public/style.css" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;800&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
   <link rel="stylesheet" type="text/css"
@@ -26,7 +27,7 @@
   <div class="hamburger-menu-wrapper">
     <div class="close-button-wrapper">
       <button class="close-icon">
-        <img src="public/ui/close-icon.png" />
+        <img src="public/ui/close-icon-white.png" />
       </button>
     </div>
     <span><a class="scroll" href="#home">HOME</a></span>
@@ -48,7 +49,7 @@
     </div> -->
   <div class="page-wrapper">
     <div id="modal" class="modal-overlay hide">
-      <div id="close-modal" class="close-icon">X</div>
+      <img id="close-modal" class="close-icon" src="public/ui/close-icon-white.png" />
       <div class="modal-content">
         <div class="screenshot-wrapper">
           <div class="current-slide-img-wrapper">
@@ -72,7 +73,7 @@
     </div>
   </div>
   <div id="home" class="home-wrapper">
-    <div class="down-button-and-title">
+    <!-- <div class="down-button-and-title">
       <div class="title-wrapper">
         <p>I'm James & I build things for the web.</p>
       </div>
@@ -81,6 +82,11 @@
         <div class="chevron"></div>
         <div class="chevron"></div>
       </div>
+    </div> -->
+    <div id="down-button" class="chevrons">
+      <div class="chevron"></div>
+      <div class="chevron"></div>
+      <div class="chevron"></div>
     </div>
     <div class="logo-bg-wrapper">
       <div class="logo-bg"></div>
@@ -94,6 +100,14 @@
     </div>
   </div>
   <div id="projects" class="projects-section-wrapper">
+    <div class="projects-section-header">
+    <div class="projects-section-title-wrapper">
+      <p class="projects-section-title">PROJECTS</p>
+      <p class="color-blue">_</p>
+    </div>
+    <p class="projects-section-description">As a <b>software developer</b> based in <b>Houston</b>, I strive to
+      implement best practices while crafting rich interactive user experiences</p>
+    </div>
     <div id="projects-content" class="projects-content">
       <!-- <div class="project-wrapper">
             <a class="project-title" href="https://tonalify.herokuapp.com"
@@ -194,6 +208,7 @@
     </div>
   </div>
   <div id="contact" class="contact-section-wrapper">
+    <p>Looking for a software developer? <b>Let's chat</b></p>
     <div class="contact-form-wrapper">
       <form action="https://formspree.io/xqkpgknn" method="POST">
         <div class="email-field-wrapper">
@@ -247,7 +262,6 @@
         var homeSection = document.getElementById("home")
         homeSection.style.opacity = 1 - +window.pageYOffset / 550 + ''
 
-
         scrollLink.each(function () {
           var sectionOffset = $(this.hash).offset().top - 20;
           $(this).parent().removeClass('active');
@@ -295,7 +309,7 @@
           live: 'https://tonalify.herokuapp.com/',
           tech: [],
           cover: 'public/project-screenshots/tonalify-cover.png',
-          screenshots: [ 'public/project-screenshots/dc-alumni-cover.png', 'public/project-screenshots/guitar-cover.png', 'public/project-screenshots/dc-alumni-cover.png']
+          screenshots: ['public/project-screenshots/dc-alumni-cover.png', 'public/project-screenshots/guitar-cover.png', 'public/project-screenshots/dc-alumni-cover.png']
         },
         {
           id: 'guitar',
@@ -357,7 +371,7 @@
 
         $('.carousel-wrapper').slick({
           dots: true,
-          infinite: true,
+          infinite: false,
           centerMode: true,
           centerPadding: '20px',
           slidesToShow: 1,
