@@ -268,8 +268,7 @@ html {
   padding: 5px;
   position: fixed;
   z-index: 2;
-  background-color: $blue;
-  box-shadow: $box;
+  background-color: $grey;
   img {
     width: 28px;
     height: 28px;
@@ -470,7 +469,7 @@ html {
   }
 
   .logo-bg-wrapper {
-    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.7));
+    // filter: drop-shadow(0.2rem 0.2rem 1rem rgba(0, 0, 0, 0.5));
     .logo-svg {
       position: absolute;
       width: 0;
@@ -482,11 +481,11 @@ html {
       height: 100vw;
       max-width: 100vw;
       max-height: 100vh;
-      background: $blue;
+      background: $grey;
       background-attachment: fixed;
       background-repeat: repeat;
       background-size: auto 90%;
-      animation: bgFrames 10s ease infinite;
+      animation: bgFrames 10s infinite;
       background-image: url("../public/ui/code.png");
       clip-path: url("#myClip");
 
@@ -526,6 +525,7 @@ html {
   text-align: center;
 
   .projects-section-header {
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -533,9 +533,9 @@ html {
       margin-top: 20px;
       display: inline-flex;
       align-items: baseline;
-      font-size: 4rem;
       font-weight: 800;
       line-height: 1;
+      font-size: 2rem;
 
       .projects-section-title {
         color: white;
@@ -547,7 +547,7 @@ html {
 
     .projects-section-description {
       font-size: 1.3rem;
-      width: 50vw;
+      width: 100%;
       color: white;
       text-align: center;
       font-weight: 300;
@@ -564,7 +564,6 @@ html {
     margin-right: auto;
     display: flex;
     overflow-x: scroll;
-    justify-content: center;
     height: 100%;
     width: 100%;
 
@@ -721,6 +720,22 @@ html {
 
 @media (min-width: 500px) {
   .projects-section-wrapper {
+
+    .projects-section-header {
+ 
+      .projects-section-title-wrapper {
+        margin-top: 20px;
+        font-size: 4rem;
+        .projects-section-title {
+          
+        }
+
+      }
+  
+      .projects-section-description {
+        width: 50vw;
+      }
+    }
     .projects-content {
       width: 90%;
       display: flex;
