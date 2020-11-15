@@ -384,11 +384,16 @@ html {
 }
 
 .home-wrapper {
+  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: auto 50%;
+  background-image: url("../public/ui/code.png");
   height: 100vh;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $blue;
 
   .chevrons {
     margin: auto;
@@ -400,6 +405,7 @@ html {
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 400;
   }
   .chevron {
     position: absolute;
@@ -464,7 +470,7 @@ html {
   }
 
   .logo-bg-wrapper {
-
+    filter: drop-shadow(0 0 1rem rgba(0, 0, 0, 0.7));
     .logo-svg {
       position: absolute;
       width: 0;
@@ -479,20 +485,20 @@ html {
       background: $blue;
       background-attachment: fixed;
       background-repeat: repeat;
-      background-size: auto 50%;
+      background-size: auto 90%;
       animation: bgFrames 10s ease infinite;
       background-image: url("../public/ui/code.png");
       clip-path: url("#myClip");
 
       @keyframes bgFrames {
         0% {
-          background-position: 0 50%;
+          background-position: 0 500%;
         }
         50% {
           background-position: 0 0;
         }
         100% {
-          background-position: 0 50%;
+          background-position: 0 500%;
         }
       }
     }
@@ -626,13 +632,13 @@ html {
   flex-direction: column;
   background: $blue;
 
-  p{
+  p {
     font-size: 2rem;
     color: white;
     max-width: 500px;
     line-height: 1;
     margin: 10px;
-    b{
+    b {
       font-weight: 800;
     }
   }
