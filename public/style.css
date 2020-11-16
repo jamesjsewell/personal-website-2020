@@ -124,7 +124,7 @@ html {
 
 .modal-overlay {
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   width: 100vw;
   height: 100vh;
   min-width: 300px;
@@ -191,13 +191,39 @@ html {
       color: white; }
     .modal-overlay .modal-content .project-info-wrapper {
       width: 100%; }
+      .modal-overlay .modal-content .project-info-wrapper .project-modal-title-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between; }
+        .modal-overlay .modal-content .project-info-wrapper .project-modal-title-wrapper .view-site-icons {
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 5px;
+          padding-right: 5px; }
+          .modal-overlay .modal-content .project-info-wrapper .project-modal-title-wrapper .view-site-icons img {
+            padding: 5px;
+            width: 30px;
+            height: 30px; }
       .modal-overlay .modal-content .project-info-wrapper #project-modal-title {
         font-size: 2rem;
-        color: white; }
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px; }
       .modal-overlay .modal-content .project-info-wrapper #project-modal-description {
         font-size: 1rem;
         color: white;
-        overflow-y: scroll; }
+        overflow-y: scroll;
+        padding: 10px; }
+      .modal-overlay .modal-content .project-info-wrapper .project-modal-tech {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: center; }
+        .modal-overlay .modal-content .project-info-wrapper .project-modal-tech img {
+          width: 40px;
+          height: 40px; }
 
 .mobile-nav-wrapper {
   visibility: visible;

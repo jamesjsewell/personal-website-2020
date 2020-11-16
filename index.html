@@ -62,9 +62,16 @@
         </div>
 
         <div class="project-info-wrapper">
-          <h3 id="project-modal-title"></h3>
+          <div class="project-modal-title-wrapper">
+            <h3 id="project-modal-title"></h3>
+            <div class="view-site-icons"><a id="github-icon" target="_blank" rel="noopener noreferrer"><img
+                  class="github-icon" src="public/ui/github.png" /></a>
+              <a id="launch-icon" target="_blank" rel="noopener noreferrer"><img class="launch-icon"
+                  src="public/ui/launch-white.png" /></a></div>
+          </div>
           <div>
             <p id="project-modal-description"></p>
+            <div id="project-modal-tech" class="project-modal-tech"></div>
           </div>
 
         </div>
@@ -101,12 +108,12 @@
   </div>
   <div id="projects" class="projects-section-wrapper">
     <div class="projects-section-header">
-    <div class="projects-section-title-wrapper">
-      <p class="projects-section-title">PROJECTS</p>
-      <p class="color-blue">_</p>
-    </div>
-    <p class="projects-section-description">As a <b>software developer</b> based in <b>Houston</b>, I strive to
-      implement best practices while crafting rich interactive user experiences</p>
+      <div class="projects-section-title-wrapper">
+        <p class="projects-section-title">PROJECTS</p>
+        <p class="color-blue">_</p>
+      </div>
+      <p class="projects-section-description">As a <b>software developer</b> based in <b>Houston</b>, I strive to
+        implement best practices while crafting rich interactive user experiences</p>
     </div>
     <div id="projects-content" class="projects-content">
       <!-- <div class="project-wrapper">
@@ -299,6 +306,20 @@
         );
       })
 
+      var tech = {
+        angular: 'public/skill-icons/angular.png',
+        typescript: 'public/skill-icons/typescript.png',
+        react: 'public/skill-icons/react.png',
+        redux: 'public/skill-icons/redux.png',
+        html: 'public/skill-icons/html.png',
+        css: 'public/skill-icons/css.png',
+        scss: 'public/skill-icons/scss.png',
+        javascript: 'public/skill-icons/javascript.png',
+        mongodb: 'public/skill-icons/mongodb.png',
+        express: 'public/skill-icons/express.png',
+        node: 'public/skill-icons/nodejs.png'
+      }
+
       // populate projects
       var projects = [
         {
@@ -307,7 +328,7 @@
           description: 'Webapp that enables users to view the key and tempo of songs in their spotify library. Users can select songs based on key and tempo and export their selections to their spotify account as playlists',
           source: 'https://github.com/jamesjsewell/tonalify',
           live: 'https://tonalify.herokuapp.com/',
-          tech: [],
+          tech: [tech['react'], tech['redux'], tech['typescript'], tech['javascript'], tech['css'], tech['scss'], tech['node'], tech['mongodb']],
           cover: 'public/project-screenshots/tonalify-cover.png',
           screenshots: ['public/project-screenshots/tonalify_2.png', 'public/project-screenshots/tonalify_3.png', 'public/project-screenshots/tonalify_1.png', 'public/project-screenshots/tonalify_4.png']
         },
@@ -361,6 +382,17 @@
         $("#current-slide-img").attr("src", project.screenshots[0])
         $("#project-modal-title").html(project.title)
         $("#project-modal-description").html(project.description)
+
+
+        var techIcons = []
+        for (var i = 0; i < project.tech.length; i++) {
+          techIcons.push($("<img>", { src: project.tech[i], class: 'tech-icon' }))
+        }
+
+        $("#github-icon").attr("href", project.source)
+        $("#launch-icon").attr("href", project.live)
+        $("#project-modal-tech").html(techIcons)
+
         $("#carousel-wrapper").html("")
         for (var i = 0; i < project.screenshots.length; i++) {
           var carouselItem = $("<div>", { class: "carousel-item" })

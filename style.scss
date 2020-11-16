@@ -141,7 +141,7 @@ html {
 
 .modal-overlay {
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, .9);
   width: 100vw;
   height: 100vh;
   min-width: $minWidth;
@@ -257,15 +257,49 @@ html {
     .project-info-wrapper {
       width: 100%;
 
+      .project-modal-title-wrapper {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        justify-content: space-between;
+        .view-site-icons{
+          display: flex;
+          flex-wrap: wrap;
+          padding-left: 5px;
+          padding-right: 5px;
+          img {
+            padding: 5px;
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+
       #project-modal-title {
         font-size: 2rem;
         color: white;
+        padding-left: 10px;
+        padding-right: 10px;
       }
 
       #project-modal-description {
         font-size: 1rem;
         color: white;
         overflow-y: scroll;
+        padding: 10px;
+      }
+
+      .project-modal-tech {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 20px;
+        justify-content: center;
+        
+        img {
+          width: 40px;
+          height: 40px;
+        }
       }
     }
   }
