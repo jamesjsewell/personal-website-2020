@@ -113,8 +113,10 @@ $grey: #1e1e20;
 $blue: #16ade3;
 $box: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 16px rgba(0, 0, 0, 0.5);
 $font: "Mukta", sans-serif;
+$minWidth: 300px;
 
 body {
+  min-width: $minWidth;
   overflow-x: hidden;
   background-color: $grey;
   font-family: $font;
@@ -142,6 +144,7 @@ html {
   background: rgba(0, 0, 0, 0.8);
   width: 100vw;
   height: 100vh;
+  min-width: $minWidth;
   z-index: 500;
 
   .close-icon {
@@ -168,9 +171,9 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -43%);
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column;
 
@@ -186,13 +189,15 @@ html {
         display: flex;
         justify-content: center;
         #current-slide-img {
-          width: 100%;
+          width: 90vw;
+          // margin-top: 40px;
         }
       }
 
       #carousel-wrapper {
         width: 200px;
         height: 100px;
+        margin-top: 20px;
         .carousel-item {
           // overflow: hidden;
           // height: 200px;
@@ -217,13 +222,13 @@ html {
     }
 
     .slick-slide {
-      width: 100px;
+      width: auto;
       height: 100px;
       opacity: 0.5;
     }
 
     .slick-slide img {
-      width: 100px;
+      width: auto;
       height: 100px;
     }
 
@@ -243,6 +248,10 @@ html {
 
     .slick-next:before {
       opacity: 1;
+    }
+
+    .slick-dots li button:before {
+      color: white;
     }
 
     .project-info-wrapper {
@@ -813,7 +822,7 @@ html {
   }
 }
 
-@media (min-width: 700px) {
+@media (min-width: 735px) {
   .projects-section-wrapper {
     .projects-content {
       .project-wrapper {
@@ -842,18 +851,21 @@ html {
       flex-direction: row;
 
       .screenshot-wrapper {
+        margin-right: 20px;
         width: 70%;
         flex-direction: column;
 
         .current-slide-img-wrapper {
-          width: 70%;
+        
           #current-slide-img {
-            width: 70%;
+            width: 100%;
+            max-width: 100%;
+            margin-top: 0;
           }
         }
 
         #carousel-wrapper {
-          width: 200px;
+          width: 50%;
           height: 100px;
           .carousel-item {
             // overflow: hidden;
@@ -879,13 +891,13 @@ html {
       }
 
       .slick-slide {
-        width: 100px;
-        height: 100px;
+        // width: 100px;
+        // height: 100px;
       }
 
       .slick-slide img {
-        width: 100px;
-        height: 100px;
+        // width: 100px;
+        // height: 100px;
       }
 
       .project-info-wrapper {

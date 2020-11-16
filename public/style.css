@@ -107,6 +107,7 @@ textarea {
   display: none; }
 
 body {
+  min-width: 300px;
   overflow-x: hidden;
   background-color: #1e1e20;
   font-family: "Mukta", sans-serif; }
@@ -126,6 +127,7 @@ html {
   background: rgba(0, 0, 0, 0.8);
   width: 100vw;
   height: 100vh;
+  min-width: 300px;
   z-index: 500; }
   .modal-overlay .close-icon {
     cursor: pointer;
@@ -147,9 +149,9 @@ html {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -43%);
     position: relative;
-    border-radius: 10px;
+    border-radius: 5px;
     display: flex;
     flex-direction: column; }
     .modal-overlay .modal-content .screenshot-wrapper {
@@ -163,10 +165,11 @@ html {
         display: flex;
         justify-content: center; }
         .modal-overlay .modal-content .screenshot-wrapper .current-slide-img-wrapper #current-slide-img {
-          width: 100%; }
+          width: 90vw; }
       .modal-overlay .modal-content .screenshot-wrapper #carousel-wrapper {
         width: 200px;
-        height: 100px; }
+        height: 100px;
+        margin-top: 20px; }
     .modal-overlay .modal-content .slick-slide.slick-center {
       opacity: 1; }
     .modal-overlay .modal-content .slick-slider,
@@ -174,16 +177,18 @@ html {
     .modal-overlay .modal-content .slick-track {
       height: 100%; }
     .modal-overlay .modal-content .slick-slide {
-      width: 100px;
+      width: auto;
       height: 100px;
       opacity: 0.5; }
     .modal-overlay .modal-content .slick-slide img {
-      width: 100px;
+      width: auto;
       height: 100px; }
     .modal-overlay .modal-content .slick-prev:before {
       opacity: 1; }
     .modal-overlay .modal-content .slick-next:before {
       opacity: 1; }
+    .modal-overlay .modal-content .slick-dots li button:before {
+      color: white; }
     .modal-overlay .modal-content .project-info-wrapper {
       width: 100%; }
       .modal-overlay .modal-content .project-info-wrapper #project-modal-title {
@@ -565,7 +570,7 @@ html {
       width: 40px;
       height: 40px; } }
 
-@media (min-width: 700px) {
+@media (min-width: 735px) {
   .projects-section-wrapper .projects-content .project-wrapper {
     width: 400px;
     height: 400px; }
@@ -577,14 +582,15 @@ html {
     display: flex;
     flex-direction: row; }
     .modal-overlay .modal-content .screenshot-wrapper {
+      margin-right: 20px;
       width: 70%;
       flex-direction: column; }
-      .modal-overlay .modal-content .screenshot-wrapper .current-slide-img-wrapper {
-        width: 70%; }
-        .modal-overlay .modal-content .screenshot-wrapper .current-slide-img-wrapper #current-slide-img {
-          width: 70%; }
+      .modal-overlay .modal-content .screenshot-wrapper .current-slide-img-wrapper #current-slide-img {
+        width: 100%;
+        max-width: 100%;
+        margin-top: 0; }
       .modal-overlay .modal-content .screenshot-wrapper #carousel-wrapper {
-        width: 200px;
+        width: 50%;
         height: 100px; }
     .modal-overlay .modal-content .slick-slide.slick-center {
       opacity: 1; }
@@ -592,11 +598,5 @@ html {
     .modal-overlay .modal-content .slick-list,
     .modal-overlay .modal-content .slick-track {
       height: 100%; }
-    .modal-overlay .modal-content .slick-slide {
-      width: 100px;
-      height: 100px; }
-    .modal-overlay .modal-content .slick-slide img {
-      width: 100px;
-      height: 100px; }
     .modal-overlay .modal-content .project-info-wrapper {
       width: 30%; } }
