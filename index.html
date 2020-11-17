@@ -240,6 +240,11 @@
         </div>
       </form>
     </div>
+    <div class="contact-links">
+      <a href="https://github.com/jamesjsewell" target="_blank" rel="noopener noreferrer"><img src="public/social-icons/github.png" /></a>
+      <a href="https://www.linkedin.com/in/jamesjsewell/" target="_blank" rel="noopener noreferrer"><img src="public/social-icons/linkedin.png" /></a>
+      <a href="http://dl.dropboxusercontent.com/s/wg7if8vo5rqr8vp/james_sewell_resume_2020.pdf?dl=0" target="_blank" rel="noopener noreferrer"><img src="public/social-icons/resume.png" /></a>
+    </div>
   </div>
   </div>
 
@@ -330,7 +335,7 @@
           live: 'https://tonalify.herokuapp.com/',
           tech: [tech['react'], tech['redux'], tech['typescript'], tech['javascript'], tech['css'], tech['scss'], tech['node'], tech['mongodb']],
           cover: 'public/project-screenshots/tonalify-cover.png',
-          screenshots: ['public/project-screenshots/tonalify_2.png', 'public/project-screenshots/tonalify_3.png', 'public/project-screenshots/tonalify_1.png', 'public/project-screenshots/tonalify_4.png']
+          screenshots: ['public/project-screenshots/tonalify/tonalify_2.png', 'public/project-screenshots/tonalify/tonalify_3.png', 'public/project-screenshots/tonalify/tonalify_1.png', 'public/project-screenshots/tonalify/tonalify_4.png']
         },
         {
           id: 'guitar',
@@ -338,9 +343,9 @@
           description: 'Webapp that visualizes a guitar fretboard with notes and allows the user to select the key and scale. I built this to help teach myself guitar theory. It’s written in pure javascript and the rendering is done using css only.',
           source: 'https://github.com/jamesjsewell/guitarro',
           live: 'http://guitarro.surge.sh/',
-          tech: [],
+          tech:  [tech['javascript'], tech['html'], tech['css'], tech['scss']],
           cover: 'public/project-screenshots/guitar-cover.png',
-          screenshots: ['public/project-screenshots/guitar-app.png']
+          screenshots: ['public/project-screenshots/guitar.png']
         },
         {
           id: 'alumni',
@@ -348,9 +353,9 @@
           description: 'I created this project while I was a TA at the DigitalCrafts coding bootcamp. Its a prototype portal where potential employers could view graduate profiles',
           source: 'https://github.com/jamesjsewell/dc_alumni_portal',
           live: 'http://alumni.surge.sh/',
-          tech: [],
+          tech: [tech['react'], tech['redux'], tech['javascript'], tech['css'], tech['scss'], tech['node'], tech['mongodb']],
           cover: 'public/project-screenshots/dc-alumni-cover.png',
-          screenshots: ['public/project-screenshots/dc-alumni-app.png']
+          screenshots: ['public/project-screenshots/alumni/alumni-1.png', 'public/project-screenshots/alumni/alumni-2.png', 'public/project-screenshots/alumni/alumni-3.png']
         }
       ]
 
@@ -379,6 +384,7 @@
         var project = projects.find(function (proj) {
           if (proj.id === projectId) return proj
         })
+
         $("#current-slide-img").attr("src", project.screenshots[0])
         $("#project-modal-title").html(project.title)
         $("#project-modal-description").html(project.description)
@@ -393,7 +399,12 @@
         $("#launch-icon").attr("href", project.live)
         $("#project-modal-tech").html(techIcons)
 
+
         $("#carousel-wrapper").html("")
+
+        if(project.screenshots.length <=1) {
+          return
+        }
         for (var i = 0; i < project.screenshots.length; i++) {
           var carouselItem = $("<div>", { class: "carousel-item" })
           var screenshot = $("<img>", { src: project.screenshots[i], class: "carousel-image" })
@@ -409,7 +420,7 @@
           adaptiveHeight: true
         }).on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
           //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
-          $("#current-slide-img").attr("src", projects[0].screenshots[currentSlide])
+          $("#current-slide-img").attr("src", project.screenshots[currentSlide])
         });
         $('.carousel-wrapper').slick("refresh")
 

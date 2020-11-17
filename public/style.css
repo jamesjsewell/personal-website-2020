@@ -431,7 +431,8 @@ html {
       width: 100%;
       color: white;
       text-align: center;
-      font-weight: 300; }
+      font-weight: 300;
+      margin-top: 20px; }
       .projects-section-wrapper .projects-section-header .projects-section-description b {
         font-weight: 800; }
   .projects-section-wrapper .projects-content {
@@ -547,6 +548,16 @@ html {
           color: white;
           background: #16ade3;
           border-radius: 5px; }
+  .contact-section-wrapper .contact-links {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center; }
+    .contact-section-wrapper .contact-links a {
+      margin: 5px; }
+      .contact-section-wrapper .contact-links a img {
+        padding: 5px;
+        width: auto;
+        height: 50px; }
 
 @media (min-width: 500px) {
   .projects-section-wrapper .projects-section-header .projects-section-title-wrapper {
