@@ -18,6 +18,11 @@
 </head>
 
 <body>
+  <div id="loader-overlay" class="loader-overlay">
+    <div class="loader-wrapper">
+      <div class="loader">Loading...</div>
+    </div>
+  </div>
   <div class="mobile-nav-wrapper">
     <button class="hamburger">
       <img src="public/ui/hamburger-white.png" />
@@ -48,6 +53,16 @@
       </div>
     </div> -->
   <div class="page-wrapper">
+    <div class="nav-wrapper">
+      <div id="links-wrapper" class="links-wrapper"> 
+        <div class="link-divider"></div>
+        <div id="home-nav"><a class="scroll" href="#home">HOME</a></div>
+        <div class="link-divider"></div>
+        <div><a class="scroll" href="#projects">PROJECTS</a></div>
+        <div class="link-divider"></div>
+        <div><a class="scroll" href="#contact">CONTACT</a></div>
+      </div>
+    </div>
     <div id="modal" class="modal-overlay hide">
       <img id="close-modal" class="close-icon" src="public/ui/close-icon-white.png" />
       <div class="modal-content">
@@ -241,9 +256,12 @@
       </form>
     </div>
     <div class="contact-links">
-      <a href="https://github.com/jamesjsewell" target="_blank" rel="noopener noreferrer"><img src="public/social-icons/github.png" /></a>
-      <a href="https://www.linkedin.com/in/jamesjsewell/" target="_blank" rel="noopener noreferrer"><img src="public/social-icons/linkedin.png" /></a>
-      <a href="http://dl.dropboxusercontent.com/s/wg7if8vo5rqr8vp/james_sewell_resume_2020.pdf?dl=0" target="_blank" rel="noopener noreferrer"><img src="public/social-icons/resume.png" /></a>
+      <a href="https://github.com/jamesjsewell" target="_blank" rel="noopener noreferrer"><img
+          src="public/social-icons/github.png" /></a>
+      <a href="https://www.linkedin.com/in/jamesjsewell/" target="_blank" rel="noopener noreferrer"><img
+          src="public/social-icons/linkedin.png" /></a>
+      <a href="http://dl.dropboxusercontent.com/s/wg7if8vo5rqr8vp/james_sewell_resume_2020.pdf?dl=0" target="_blank"
+        rel="noopener noreferrer"><img src="public/social-icons/resume.png" /></a>
     </div>
   </div>
   </div>
@@ -252,6 +270,12 @@
 
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.0/slick/slick.min.js"></script>
   <script>
+
+    $(window).on('load', function () {
+      $('#loader-overlay').addClass("hide")
+
+    });
+
     $(document).ready(function () {
       var scrollLink = $('.scroll');
 
@@ -266,22 +290,31 @@
         );
       });
 
+      
+      if($(this).scrollTop() < window.innerHeight) {
+        $('#links-wrapper').addClass("hide")
+      }
+
+
       // active link switching
       $(window).scroll(function () {
+      
         var scrollbarLocation = $(this).scrollTop();
 
         // fade hero section background
         var homeSection = document.getElementById("home")
         homeSection.style.opacity = 1 - +window.pageYOffset / 550 + ''
 
-        scrollLink.each(function () {
+        scrollLink.each(function (linkNumber) {
+
           var sectionOffset = $(this.hash).offset().top - 20;
           $(this).parent().removeClass('active');
-          if ($(this).parent().attr("id") == "logo" || $(this).attr("id") == "logo") {
-            return
-          }
+          // if ($(this).parent().attr("id") == "logo" || $(this).attr("id") == "logo") {
+          //   return
+          // }
 
           if (sectionOffset <= scrollbarLocation) {
+          
             $(this)
               .parent()
               .addClass('active');
@@ -290,6 +323,12 @@
               .siblings()
               .removeClass('active');
             $('.hamburger-menu-wrapper').css('visibility', 'hidden');
+
+            if($(this).parent().attr("id") == "home-nav") {
+              $('#links-wrapper').addClass("hide")
+              return
+            }
+            $('#links-wrapper').removeClass("hide")
           }
         });
       });
@@ -343,7 +382,7 @@
           description: 'Webapp that visualizes a guitar fretboard with notes and allows the user to select the key and scale. I built this to help teach myself guitar theory. It’s written in pure javascript and the rendering is done using css only.',
           source: 'https://github.com/jamesjsewell/guitarro',
           live: 'http://guitarro.surge.sh/',
-          tech:  [tech['javascript'], tech['html'], tech['css'], tech['scss']],
+          tech: [tech['javascript'], tech['html'], tech['css'], tech['scss']],
           cover: 'public/project-screenshots/guitar-cover.png',
           screenshots: ['public/project-screenshots/guitar.png']
         },
@@ -402,7 +441,7 @@
 
         $("#carousel-wrapper").html("")
 
-        if(project.screenshots.length <=1) {
+        if (project.screenshots.length <= 1) {
           return
         }
         for (var i = 0; i < project.screenshots.length; i++) {
