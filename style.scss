@@ -113,10 +113,8 @@ $grey: #1e1e20;
 $blue: #16ade3;
 $box: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 16px rgba(0, 0, 0, 0.5);
 $font: "Mukta", sans-serif;
-$minWidth: 300px;
 
 body {
-  min-width: $minWidth;
   overflow-x: hidden;
   background-color: $grey;
   font-family: $font;
@@ -208,9 +206,41 @@ html {
 }
 
 .active {
-  a{
+  a {
     font-weight: 800 !important;
     color: $blue !important;
+  }
+}
+
+.fade-in-modal-image {
+  animation: fadeInModalImage ease-in 0.5s;
+
+  @keyframes fadeInModalImage {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.fade-in-modal {
+  animation: fadeInModal ease 1.5s;
+  -webkit-animation: fadeInModal ease 1.5s;
+  -moz-animation: fadeInModal ease 1.5s;
+  -o-animation: fadeInModal ease 1.5s;
+  -ms-animation: fadeInModal ease 1.5s;
+}
+@keyframes fadeInModal {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
@@ -219,7 +249,6 @@ html {
   background: rgba(0, 0, 0, 0.9);
   width: 100vw;
   height: 100vh;
-  min-width: $minWidth;
   z-index: 100;
 
   .close-icon {
@@ -276,6 +305,26 @@ html {
         }
 
         .carousel-image {
+        }
+      }
+
+      .fade-in-carousel {
+        animation: fadeInCarousel ease 1.5s;
+        -webkit-animation: fadeInCarousel ease 1.5s;
+        -moz-animation: fadeInCarousel ease 1.5s;
+        -o-animation: fadeInCarousel ease 1.5s;
+        -ms-animation: fadeInCarousel ease 1.5s;
+
+        @keyframes fadeInCarousel {
+          0% {
+            opacity: 0;
+          }
+          80% {
+            opacity: 0;
+          }
+          100% {
+            opacity: 1;
+          }
         }
       }
     }
@@ -366,8 +415,10 @@ html {
 
 .mobile-nav-wrapper {
   visibility: visible;
+  height: 28px;
   width: 100vw;
-  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
   position: fixed;
   z-index: 50;
   background-color: $grey;
@@ -672,6 +723,19 @@ html {
           color: white;
         }
       }
+
+      &:hover {
+        animation: scale-down-center 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+      }
+    }
+
+    @keyframes scale-down-center {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.98);
+      }
     }
   }
 }
@@ -955,5 +1019,31 @@ html {
         }
       }
     }
+  }
+}
+
+.fade-in {
+  animation: fade-in 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-out {
+  animation: fade-out 1s ease-out both;
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

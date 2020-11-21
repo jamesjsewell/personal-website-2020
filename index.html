@@ -54,9 +54,9 @@
     </div> -->
   <div class="page-wrapper">
     <div class="nav-wrapper">
-      <div id="links-wrapper" class="links-wrapper"> 
+      <div id="links-wrapper" class="links-wrapper">
         <div class="link-divider"></div>
-        <div id="home-nav"><a class="scroll" href="#home">HOME</a></div>
+        <div id="home-nav"><a id="home-link" class="scroll" href="#home">HOME</a></div>
         <div class="link-divider"></div>
         <div><a class="scroll" href="#projects">PROJECTS</a></div>
         <div class="link-divider"></div>
@@ -70,7 +70,7 @@
           <div class="current-slide-img-wrapper">
             <img id="current-slide-img" />
           </div>
-          <div id="carousel-wrapper" class="carousel-wrapper">
+          <div id="carousel-wrapper" class="carousel-wrapper fade-in">
 
           </div>
 
@@ -130,7 +130,7 @@
       <p class="projects-section-description">As a <b>software developer</b> based in <b>Houston</b>, I strive to
         implement best practices while crafting rich interactive user experiences</p>
     </div>
-    <div id="projects-content" class="projects-content">
+    <div id="projects-content" class="projects-content hide">
       <!-- <div class="project-wrapper">
             <a class="project-title" href="https://tonalify.herokuapp.com"
               >Spotify
@@ -231,7 +231,7 @@
   </div>
   <div id="contact" class="contact-section-wrapper">
     <p>Looking for a software developer? <b>Let's chat</b></p>
-    <div class="contact-form-wrapper">
+    <div class="contact-form-wrapper hide">
       <form action="https://formspree.io/xqkpgknn" method="POST">
         <div class="email-field-wrapper">
           <div class="email-field">
@@ -281,6 +281,7 @@
 
       // smooth scrolling
       scrollLink.click(function (e) {
+
         e.preventDefault();
         $('body,html').animate(
           {
@@ -290,21 +291,50 @@
         );
       });
 
-      
-      if($(this).scrollTop() < window.innerHeight) {
+
+      if ($(this).scrollTop() < window.innerHeight) {
         $('#links-wrapper').addClass("hide")
       }
+
+      function runAnimations() {
+
+        var windowTop = $(window).scrollTop();
+        if ($('#projects').offset().top <= windowTop + window.innerHeight / 2.5 && $('#contact').offset().top >= windowTop + window.innerHeight / 2.5) {
+          $('#projects-content').addClass("fade-in")
+          $('#projects-content').removeClass("fade-out")
+          $('#projects-content').removeClass("hide")
+        } else {
+          $('#projects-content').removeClass("fade-in")
+          $('#projects-content').addClass("fade-out")
+        }
+
+        if ($('#contact').offset().top <= windowTop + window.innerHeight / 2.5) {
+          $('.contact-form-wrapper').addClass("fade-in")
+          $('.contact-form-wrapper').removeClass("fade-out")
+          $('.contact-form-wrapper').removeClass("hide")
+
+          $('#projects-content').removeClass("fade-in")
+          $('#projects-content').addClass("fade-out")
+        } else {
+          $('.contact-form-wrapper').removeClass("fade-in")
+          $('.contact-form-wrapper').addClass("fade-out")
+        }
+
+      }
+
+      runAnimations()
 
 
       // active link switching
       $(window).scroll(function () {
-      
+
         var scrollbarLocation = $(this).scrollTop();
 
         // fade hero section background
         var homeSection = document.getElementById("home")
         homeSection.style.opacity = 1 - +window.pageYOffset / 550 + ''
 
+        // set active nav link
         scrollLink.each(function (linkNumber) {
 
           var sectionOffset = $(this.hash).offset().top - 20;
@@ -314,7 +344,7 @@
           // }
 
           if (sectionOffset <= scrollbarLocation) {
-          
+
             $(this)
               .parent()
               .addClass('active');
@@ -324,13 +354,17 @@
               .removeClass('active');
             $('.hamburger-menu-wrapper').css('visibility', 'hidden');
 
-            if($(this).parent().attr("id") == "home-nav") {
+            if ($(this).parent().attr("id") == "home-nav") {
               $('#links-wrapper').addClass("hide")
               return
             }
             $('#links-wrapper').removeClass("hide")
           }
         });
+
+        // animations
+        runAnimations()
+
       });
 
       // show hide hamburger menu
@@ -413,11 +447,15 @@
       $('#close-modal').click(function () {
         $("#modal").addClass("hide");
         $('.carousel-wrapper').slick("unslick")
+        $('.carousel-wrapper').removeClass("fade-in-carousel")
+        $("#current-slide-img").removeClass("fade-in-modal-image")
       })
 
       $('.project-wrapper').click(function (el) {
 
         $("#modal").removeClass("hide");
+        $('.carousel-wrapper').addClass("fade-in-carousel")
+        $("#current-slide-img").addClass("fade-in-modal-image")
 
         var projectId = el.target.closest('button').id
         var project = projects.find(function (proj) {
