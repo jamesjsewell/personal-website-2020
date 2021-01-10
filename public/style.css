@@ -343,8 +343,8 @@ html {
   width: 50vw;
   visibility: hidden;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
   z-index: 60;
   background: #16ade3;
   box-shadow: 0 1px 0 rgba(30, 30, 32, 0.2) inset, 0 8px 16px rgba(0, 0, 0, 0.5);
@@ -359,12 +359,17 @@ html {
     justify-content: flex-end;
     padding: 5px;
     position: relative; }
-    .hamburger-menu-wrapper .close-button-wrapper .close-icon img {
-      width: 20px;
-      height: 20px; }
+    .hamburger-menu-wrapper .close-button-wrapper .close-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+      .hamburger-menu-wrapper .close-button-wrapper .close-icon img {
+        width: 30px;
+        height: 30px; }
   .hamburger-menu-wrapper span {
     width: 100%;
-    display: block; }
+    display: block;
+    padding: 5px; }
     .hamburger-menu-wrapper span a {
       display: block;
       width: 100%;

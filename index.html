@@ -36,22 +36,10 @@
       </button>
     </div>
     <span><a class="scroll" href="#home">HOME</a></span>
-    <hr />
     <span><a class="scroll" href="#projects">PROJECTS</a></span>
-    <hr />
     <span><a class="scroll" href="#contact">CONTACT</a></span>
   </div>
-  <!-- <div class="nav-wrapper">
-      <div class="logo-wrapper">
-        <a id="logo" class="scroll" href="#home"><img  src="public/social-icons/jamesjsewell-white.png" /></a>
-      </div>
-      <div class="links-wrapper">
-        <div class="link-divider"></div>
-        <div><a class="scroll" href="#projects">PROJECTS</a></div>
-        <div class="link-divider"></div>
-        <div><a class="scroll" href="#contact">CONTACT</a></div>
-      </div>
-    </div> -->
+
   <div class="page-wrapper">
     <div class="nav-wrapper">
       <div id="links-wrapper" class="links-wrapper">
@@ -95,23 +83,15 @@
     </div>
   </div>
   <div id="home" class="home-wrapper">
-    <!-- <div class="down-button-and-title">
-      <div class="title-wrapper">
-        <p>I'm James & I build things for the web.</p>
-      </div>
-      <div id="down-button" class="chevrons">
-        <div class="chevron"></div>
-        <div class="chevron"></div>
-        <div class="chevron"></div>
-      </div>
-    </div> -->
     <div id="down-button" class="chevrons">
       <div class="chevron"></div>
       <div class="chevron"></div>
       <div class="chevron"></div>
     </div>
     <div class="logo-bg-wrapper">
-      <div class="logo-bg"><div id="logo-bg-content" class="logo-bg-content"></div></div>
+      <div class="logo-bg">
+        <div id="logo-bg-content" class="logo-bg-content"></div>
+      </div>
       <svg class="logo-svg">
         <clipPath id="myClip" clipPathUnits="objectBoundingBox">
           <path
@@ -131,102 +111,7 @@
         implement best practices while crafting rich interactive user experiences</p>
     </div>
     <div id="projects-content" class="projects-content hide">
-      <!-- <div class="project-wrapper">
-            <a class="project-title" href="https://tonalify.herokuapp.com"
-              >Spotify
-            </a>
-            <a
-              href="https://tonalify.herokuapp.com"
-              class="project-image-wrapper"
-            >
-              <img src="public/project-screenshots/tonalify.png" />
-            </a>
-            <div class="project-description-wrapper">
-              <p>
-                Webapp that enables users to view the key and tempo of songs in
-                their spotify library. Users can select songs based on key and
-                tempo and export their selections to their spotify account as
-                playlists. Frontend is built with react/redux, and the backend
-                is built with express. The backend consumes the spotify api on
-                the user's behalf using oauth. View the source code
-                <a href="https://github.com/jamesjsewell/tonalify">here</a>
-              </p>
-            </div>
-          </div>
-          <div class="project-wrapper">
-            <a class="project-title" href="http://guitarro.surge.sh/"
-              >Guitar Fretboard Webapp</a
-            >
-            <a href="http://guitarro.surge.sh/" class="project-image-wrapper">
-              <img src="public/project-screenshots/guitar-app.png" />
-            </a>
-            <div class="project-description-wrapper">
-              <p>
-                Webapp that visualizes a guitar fretboard with notes and allows
-                the user to select the key and scale. I built this to help teach
-                myself guitar theory. It’s written in pure javascript and the
-                rendering is done using css only. View the source code
-                <a href="https://github.com/jamesjsewell/guitarro">here</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="project-wrapper">
-            <a class="project-title" href="http://alumni.surge.sh/"
-              >Graduate Profiles Prototype</a
-            >
-            <a href="http://alumni.surge.sh/" class="project-image-wrapper">
-              <img src="public/project-screenshots/dc-alumni-app.png" />
-            </a>
-            <div class="project-description-wrapper">
-              <p>
-                I created this project while I was a TA at the DigitalCrafts
-                coding bootcamp. Its a prototype portal where potential
-                employers could view graduate profiles. Created with react/redux
-                on the front end and node/express on the backend. View the
-                source code
-                <a href="https://github.com/jamesjsewell/dc_alumni_portal"
-                  >here</a
-                >
-              </p>
-            </div>
-          </div>
-
-          <div class="project-wrapper">
-            <a class="project-title" href="https://hungrysnake.herokuapp.com/"
-              >Snake Clone</a
-            >
-            <a
-              href="https://hungrysnake.herokuapp.com/"
-              class="project-image-wrapper"
-            >
-              <img src="public/project-screenshots/snake.png" />
-            </a>
-            <div class="project-description-wrapper">
-              <p>
-                Snake clone written in React, uses Redux to handle higher level
-                state. The live app is being hosted on heroku so it may take a
-                moment to open. View the source code
-                <a href="https://github.com/jamesjsewell/redux_snake">here</a>
-              </p>
-            </div>
-          </div>
-
-          <div class="project-wrapper">
-            <a class="project-title" href="">Personal Site</a>
-            <a href="" class="project-image-wrapper">
-              <img src="public/project-screenshots/personal-site.png" />
-            </a>
-            <div class="project-description-wrapper">
-              <p>
-                I decided to write this website using html/css/jquery since it's
-                a simple static page. View the source code
-                <a href="https://github.com/jamesjsewell/personal-website-2020"
-                  >here</a
-                >
-              </p>
-            </div>
-          </div> -->
+  
     </div>
   </div>
   <div id="contact" class="contact-section-wrapper">
@@ -271,27 +156,21 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.0/slick/slick.min.js"></script>
   <script>
 
-    $(window).on('ready', function () {
-     
-      
-
-    });
-
     $(document).ready(function () {
       $('#loader-overlay').addClass("hide")
-  
-  setInterval(()=>{
-    var logoBgContainer = document.getElementById("logo-bg-content")
 
-    if(logoBgContainer.scrollHeight > logoBgContainer.offsetHeight) { 
-      document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML.substr(1)
-      
-    }
-    else { 
-      document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML += '01010100101110101'
-    }
-  
-  }, )
+      setInterval(() => {
+        var logoBgContainer = document.getElementById("logo-bg-content")
+
+        if (logoBgContainer.scrollHeight > logoBgContainer.offsetHeight) {
+          document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML.substr(1)
+
+        }
+        else {
+          document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML += '01010100101110101'
+        }
+
+      })
 
       var scrollLink = $('.scroll');
 
