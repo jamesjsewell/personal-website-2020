@@ -111,7 +111,7 @@
       <div class="chevron"></div>
     </div>
     <div class="logo-bg-wrapper">
-      <div class="logo-bg"></div>
+      <div class="logo-bg"><div id="logo-bg-content" class="logo-bg-content"></div></div>
       <svg class="logo-svg">
         <clipPath id="myClip" clipPathUnits="objectBoundingBox">
           <path
@@ -271,12 +271,28 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.0/slick/slick.min.js"></script>
   <script>
 
-    $(window).on('load', function () {
-      $('#loader-overlay').addClass("hide")
+    $(window).on('ready', function () {
+     
+      
 
     });
 
     $(document).ready(function () {
+      $('#loader-overlay').addClass("hide")
+  
+  setInterval(()=>{
+    var logoBgContainer = document.getElementById("logo-bg-content")
+
+    if(logoBgContainer.scrollHeight > logoBgContainer.offsetHeight) { 
+      document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML.substr(1)
+      
+    }
+    else { 
+      document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML += '01010100101110101'
+    }
+  
+  }, )
+
       var scrollLink = $('.scroll');
 
       // smooth scrolling
