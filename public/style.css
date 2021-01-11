@@ -228,7 +228,6 @@ html {
   -ms-transform: translate(-50%, -43%);
   transform: translate(-50%, -43%);
   position: relative;
-  border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -261,6 +260,8 @@ html {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .modal-overlay .modal-content .screenshot-wrapper .current-slide-img-wrapper #current-slide-img {
@@ -271,6 +272,7 @@ html {
   width: 200px;
   height: 100px;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 .modal-overlay .modal-content .screenshot-wrapper .fade-in-carousel {
@@ -529,7 +531,6 @@ html {
   background-attachment: fixed;
   background-repeat: repeat;
   background-size: auto 50%;
-  background-image: url("../public/ui/code.png");
   height: 100vh;
   width: 100%;
   display: -webkit-box;
@@ -679,8 +680,10 @@ html {
 
 .home-wrapper .logo-bg-wrapper .logo-bg .logo-bg-content {
   color: white;
+  line-height: 0.9;
   font-size: calc(0.8vw + 0.8vh);
   font-family: monospace;
+  font-weight: bolder;
   word-wrap: break-word;
   position: absolute;
   width: 100%;

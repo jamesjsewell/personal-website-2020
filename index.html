@@ -111,7 +111,7 @@
         implement best practices while crafting rich interactive user experiences</p>
     </div>
     <div id="projects-content" class="projects-content hide">
-  
+
     </div>
   </div>
   <div id="contact" class="contact-section-wrapper">
@@ -152,17 +152,36 @@
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.0/slick/slick.min.js"></script>
+
   <script>
 
+    // ----- DISABLE OR ENABLE SCROLL ----- //
+
+    // call this to Disable
+    function disableScroll() {
+      document.documentElement.style.overflowY = 'hidden'
+      document.body.style.overflowY = 'hidden'
+      var x = window.scrollX;
+      var y = window.scrollY;
+      window.onscroll = function () { window.scrollTo(x, y); };
+    }
+
+    // call this to Enable
+    function enableScroll() {
+      document.documentElement.style.overflowY = ''
+      document.body.style.overflowY = ''
+      window.onscroll = function () { };
+    }
+
     $(document).ready(function () {
+
       $('#loader-overlay').addClass("hide")
 
       setInterval(() => {
         var logoBgContainer = document.getElementById("logo-bg-content")
 
-        if (logoBgContainer.scrollHeight > logoBgContainer.offsetHeight) {
+        if (logoBgContainer.scrollHeight > logoBgContainer.offsetHeight + 10) {
           document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML.substr(1)
 
         }
@@ -170,7 +189,7 @@
           document.getElementById("logo-bg-content").innerHTML = document.getElementById("logo-bg-content").innerHTML += '01010100101110101'
         }
 
-      })
+      }, 20)
 
       var scrollLink = $('.scroll');
 
@@ -302,7 +321,7 @@
           source: 'https://github.com/jamesjsewell/tonalify',
           live: 'https://tonalify.herokuapp.com/',
           tech: [tech['react'], tech['redux'], tech['typescript'], tech['javascript'], tech['css'], tech['scss'], tech['node'], tech['mongodb']],
-          cover: 'public/project-screenshots/tonalify-cover.png',
+          cover: 'public/project-screenshots/tonalify-cover.jpg',
           screenshots: ['public/project-screenshots/tonalify/tonalify_2.png', 'public/project-screenshots/tonalify/tonalify_3.png', 'public/project-screenshots/tonalify/tonalify_1.png', 'public/project-screenshots/tonalify/tonalify_4.png']
         },
         {
@@ -312,7 +331,7 @@
           source: 'https://github.com/jamesjsewell/guitarro',
           live: 'http://guitarro.surge.sh/',
           tech: [tech['javascript'], tech['html'], tech['css'], tech['scss']],
-          cover: 'public/project-screenshots/guitar-cover.png',
+          cover: 'public/project-screenshots/guitar-cover.jpg',
           screenshots: ['public/project-screenshots/guitar.png']
         },
         {
@@ -322,7 +341,7 @@
           source: 'https://github.com/jamesjsewell/dc_alumni_portal',
           live: 'http://alumni.surge.sh/',
           tech: [tech['react'], tech['redux'], tech['javascript'], tech['css'], tech['scss'], tech['node'], tech['mongodb']],
-          cover: 'public/project-screenshots/dc-alumni-cover.png',
+          cover: 'public/project-screenshots/dc-alumni-cover.jpg',
           screenshots: ['public/project-screenshots/alumni/alumni-1.png', 'public/project-screenshots/alumni/alumni-2.png', 'public/project-screenshots/alumni/alumni-3.png']
         }
       ]
@@ -340,6 +359,7 @@
       }
 
       $('#close-modal').click(function () {
+        enableScroll()
         $("#modal").addClass("hide");
         $('.carousel-wrapper').slick("unslick")
         $('.carousel-wrapper').removeClass("fade-in-carousel")
@@ -347,7 +367,7 @@
       })
 
       $('.project-wrapper').click(function (el) {
-
+        disableScroll()
         $("#modal").removeClass("hide");
         $('.carousel-wrapper').addClass("fade-in-carousel")
         $("#current-slide-img").addClass("fade-in-modal-image")
